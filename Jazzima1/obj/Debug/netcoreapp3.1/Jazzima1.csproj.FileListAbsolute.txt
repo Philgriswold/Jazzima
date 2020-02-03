@@ -144,10 +144,11 @@ C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\bin\Debug\netcoreapp3.1\Ja
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.Views.pdb
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.dll
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.pdb
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Logout.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.MvcApplicationPartsAssemblyInfo.cache

@@ -8,7 +8,8 @@ namespace Jazzima1.Models
     public class Album
     {
         public int Id { get; set; }
-        public string title { get; set; }
+        public string Title { get; set; }
         public int ReleaseDate { get; set; }
+        public string Image { get; set; }
     }
 }
