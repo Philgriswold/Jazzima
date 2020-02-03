@@ -7,22 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Jazzima1.Data;
 using Jazzima1.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Jazzima1.Controllers
 {
     public class AlbumsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public AlbumsController(ApplicationDbContext context)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public AlbumsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
-
         // GET: Albums
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Album.ToListAsync());
+            var user = await GetCurrentUserAsync();
+            var AlbumDb = _context.Album.Where(a => a.ApplicationUserId == user.Id);
+            return View(await AlbumDb.ToListAsync());
         }
 
         // GET: Albums/Details/5
@@ -61,7 +64,7 @@ namespace Jazzima1.Controllers
                 _context.Add(album);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
+            } 
             return View(album);
         }
 
@@ -149,5 +152,6 @@ namespace Jazzima1.Controllers
         {
             return _context.Album.Any(e => e.Id == id);
         }
+        private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
     }
 }

@@ -9,6 +9,6 @@ namespace Jazzima1.Models
     {
         public int Id { get; set; }
         public int AlbumId { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

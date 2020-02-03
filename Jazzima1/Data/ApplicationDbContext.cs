@@ -26,6 +26,24 @@ namespace Jazzima1.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Create a new user for Identity Framework
+            ApplicationUser user = new ApplicationUser
+            {
+                FirstName = "admin",
+                LastName = "admin",
+                UserName = "admin@admin.com",
+                NormalizedUserName = "ADMIN@ADMIN.COM",
+                Email = "admin@admin.com",
+                NormalizedEmail = "ADMIN@ADMIN.COM",
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
+                Id = "00000000-ffff-ffff-ffff-ffffffffffff"
+            };
+            var passwordHash = new PasswordHasher<ApplicationUser>();
+            user.PasswordHash = passwordHash.HashPassword(user, "Admin8*");
+            modelBuilder.Entity<ApplicationUser>().HasData(user);
+
             // CREATING ALBUMS FOR THE DATABASE
 
             Album maidenVoyage = new Album()
@@ -168,30 +186,58 @@ namespace Jazzima1.Data
 
 
 
+            // CREATING MUSICIAN/ALBUM JOIN TABLES
+
+            MusicianAlbum tony1 = new MusicianAlbum()
+            {
+                Id = 1,
+                MusicianId = 5,
+                AlbumId = maidenVoyage.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(tony1);
+
+            MusicianAlbum tony2 = new MusicianAlbum()
+            {
+                Id = 2,
+                MusicianId = 5,
+                AlbumId = 2,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(tony2);
+
+            MusicianAlbum ron1 = new MusicianAlbum()
+            {
+                Id = 3,
+                MusicianId = 4,
+                AlbumId = 1,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(ron1);
+
+            MusicianAlbum ron2 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 4,
+                AlbumId = 3,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(ron2);
 
 
+            //CREATE USER RELATED SAVED ALBUMS
+            SavedAlbums save1 = new SavedAlbums()
+            {
+                Id = 1,
+                AlbumId = 1,
+                UserId = user.Id,
+            };
+            modelBuilder.Entity<SavedAlbums>().HasData(save1);
 
+            //SavedAlbums save2 = new SavedAlbums()
+            //{
+            //    Id = 1,
+            //    AlbumId = 2,
+            //    UserId = user.Id,
+            //};
+            //modelBuilder.Entity<SavedAlbums>().HasData(save2);
 
-
-
-
-            // Create a new user for Identity Framework
-            ApplicationUser user = new ApplicationUser
-        {
-            FirstName = "admin",
-            LastName = "admin",
-            UserName = "admin@admin.com",
-            NormalizedUserName = "ADMIN@ADMIN.COM",
-            Email = "admin@admin.com",
-            NormalizedEmail = "ADMIN@ADMIN.COM",
-            EmailConfirmed = true,
-            LockoutEnabled = false,
-            SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
-            Id = "00000000-ffff-ffff-ffff-ffffffffffff"
-        };
-        var passwordHash = new PasswordHasher<ApplicationUser>();
-        user.PasswordHash = passwordHash.HashPassword(user, "Admin8*");
-        modelBuilder.Entity<ApplicationUser>().HasData(user);
     }
    }
 }
