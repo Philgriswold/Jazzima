@@ -182,3 +182,8 @@ C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Albums\Details.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Albums\Edit.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Albums\Index.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Create.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Delete.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Details.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Edit.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Index.cshtml.g.cs
