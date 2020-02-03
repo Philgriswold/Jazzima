@@ -24,7 +24,9 @@ namespace Jazzima1.Controllers
         public async Task<IActionResult> Index()
         {
             var user = await GetCurrentUserAsync();
-            var AlbumDb = _context.Album.Where(a => a.ApplicationUserId == user.Id);
+            var AlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
+                .Include(c => c.Album);
+                //.FirstOrDefaultAsync(m => m.Id == id);
             return View(await AlbumDb.ToListAsync());
         }
 

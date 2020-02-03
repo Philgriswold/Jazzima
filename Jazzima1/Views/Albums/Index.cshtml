@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Jazzima1.Models.Album>
+﻿@model IEnumerable<Jazzima1.Models.SavedAlbum>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,13 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Album.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
+                @Html.DisplayNameFor(model => model.Album.ReleaseDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Image)
+                @Html.DisplayNameFor(model => model.Album.Image)
             </th>
             <th></th>
         </tr>
@@ -28,13 +28,14 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.Album.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
+                @Html.DisplayFor(modelItem => item.Album.ReleaseDate)
             </td>
+
             <td>
-                @Html.DisplayFor(modelItem => item.Image)
+                <img class="img-thumbnail" style="max-width: 150px;" src = "@item.Album.Image" alt="" />
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

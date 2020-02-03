@@ -19,7 +19,7 @@ namespace Jazzima1.Data
         public DbSet<Album> Album { get; set; }
         public DbSet<Musician> Musician { get; set; }
         public DbSet<MusicianAlbum> MusicianAlbum { get; set; }
-        public DbSet<SavedAlbums> SavedAlbums { get; set; }
+        public DbSet<SavedAlbum> SavedAlbums { get; set; }
         public DbSet<Comments> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -51,9 +51,9 @@ namespace Jazzima1.Data
                 Id = 1,
                 Title = "Maiden Voyage",
                 ReleaseDate = 1965,
-                Image = "https://en.wikipedia.org/wiki/File:Maiden_Voyage_(Hancock).jpg"
-           
-             };
+                Image = "https://upload.wikimedia.org/wikipedia/en/7/7a/Maiden_Voyage_%28Hancock%29.jpg"
+
+            };
             modelBuilder.Entity<Album>().HasData(maidenVoyage);
 
             Album pointOfDeparture = new Album()
@@ -222,13 +222,13 @@ namespace Jazzima1.Data
 
 
             //CREATE USER RELATED SAVED ALBUMS
-            SavedAlbums save1 = new SavedAlbums()
+            SavedAlbum save1 = new SavedAlbum()
             {
                 Id = 1,
                 AlbumId = 1,
                 UserId = user.Id,
             };
-            modelBuilder.Entity<SavedAlbums>().HasData(save1);
+            modelBuilder.Entity<SavedAlbum>().HasData(save1);
 
             //SavedAlbums save2 = new SavedAlbums()
             //{
