@@ -187,10 +187,106 @@ namespace Jazzima1.Data
 
 
             // CREATING MUSICIAN/ALBUM JOIN TABLES
+            MusicianAlbum herbie1 = new MusicianAlbum()
+            {
+                Id = 1,
+                MusicianId = 1,
+                AlbumId = maidenVoyage.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(herbie1);
+
+            MusicianAlbum freddie1 = new MusicianAlbum()
+            {
+                Id = 2,
+                MusicianId = 2,
+                AlbumId = maidenVoyage.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(freddie1);
+
+            MusicianAlbum freddie2 = new MusicianAlbum()
+            {
+                Id = 3,
+                MusicianId = 2,
+                AlbumId = theSoothsayer.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(freddie2);
+
+            MusicianAlbum george1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 3,
+                AlbumId = maidenVoyage.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(george1);
+
+            MusicianAlbum kenny1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 6,
+                AlbumId = pointOfDeparture.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(kenny1);
+
+            MusicianAlbum eric1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 7,
+                AlbumId = pointOfDeparture.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(eric1);
+
+            MusicianAlbum joe1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 8,
+                AlbumId = pointOfDeparture.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(joe1);
+
+            MusicianAlbum andrew1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 9,
+                AlbumId = pointOfDeparture.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(andrew1);
+
+            MusicianAlbum richard1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 10,
+                AlbumId = pointOfDeparture.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(richard1);
+
+            MusicianAlbum wayne1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 11,
+                AlbumId = theSoothsayer.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(wayne1);
+
+            MusicianAlbum james1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 12,
+                AlbumId = theSoothsayer.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(james1);
+
+            MusicianAlbum mccoy1 = new MusicianAlbum()
+            {
+                Id = 4,
+                MusicianId = 13,
+                AlbumId = theSoothsayer.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(mccoy1);
+
 
             MusicianAlbum tony1 = new MusicianAlbum()
             {
-                Id = 1,
+                Id = 4,
                 MusicianId = 5,
                 AlbumId = maidenVoyage.Id,
             };
@@ -198,7 +294,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum tony2 = new MusicianAlbum()
             {
-                Id = 2,
+                Id = 5,
                 MusicianId = 5,
                 AlbumId = 2,
             };
@@ -206,7 +302,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum ron1 = new MusicianAlbum()
             {
-                Id = 3,
+                Id = 6,
                 MusicianId = 4,
                 AlbumId = 1,
             };
@@ -214,7 +310,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum ron2 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 7,
                 MusicianId = 4,
                 AlbumId = 3,
             };
