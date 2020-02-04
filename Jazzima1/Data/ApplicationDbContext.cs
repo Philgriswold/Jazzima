@@ -61,7 +61,7 @@ namespace Jazzima1.Data
                 Id = 2,
                 Title = "Point Of Departure",
                 ReleaseDate = 1965,
-                Image = "https://en.wikipedia.org/wiki/File:Point_of_Departure.jpg"
+                Image = "https://upload.wikimedia.org/wikipedia/en/4/4a/Point_of_Departure.jpg"
 
             };
             modelBuilder.Entity<Album>().HasData(pointOfDeparture);
@@ -71,7 +71,7 @@ namespace Jazzima1.Data
                 Id = 3,
                 Title = "The Soothsayer",
                 ReleaseDate = 1979,
-                Image = "https://en.wikipedia.org/wiki/File:The_Soothsayer.jpg"
+                Image = "https://upload.wikimedia.org/wikipedia/en/4/41/The_Soothsayer.jpg"
 
             };
             modelBuilder.Entity<Album>().HasData(theSoothsayer);
@@ -221,7 +221,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum kenny1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 5,
                 MusicianId = 6,
                 AlbumId = pointOfDeparture.Id,
             };
@@ -229,7 +229,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum eric1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 6,
                 MusicianId = 7,
                 AlbumId = pointOfDeparture.Id,
             };
@@ -237,7 +237,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum joe1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 7,
                 MusicianId = 8,
                 AlbumId = pointOfDeparture.Id,
             };
@@ -245,7 +245,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum andrew1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 8,
                 MusicianId = 9,
                 AlbumId = pointOfDeparture.Id,
             };
@@ -253,7 +253,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum richard1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 9,
                 MusicianId = 10,
                 AlbumId = pointOfDeparture.Id,
             };
@@ -261,7 +261,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum wayne1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 10,
                 MusicianId = 11,
                 AlbumId = theSoothsayer.Id,
             };
@@ -269,7 +269,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum james1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 11,
                 MusicianId = 12,
                 AlbumId = theSoothsayer.Id,
             };
@@ -277,7 +277,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum mccoy1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 12,
                 MusicianId = 13,
                 AlbumId = theSoothsayer.Id,
             };
@@ -286,7 +286,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum tony1 = new MusicianAlbum()
             {
-                Id = 4,
+                Id = 13,
                 MusicianId = 5,
                 AlbumId = maidenVoyage.Id,
             };
@@ -294,7 +294,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum tony2 = new MusicianAlbum()
             {
-                Id = 5,
+                Id = 14,
                 MusicianId = 5,
                 AlbumId = 2,
             };
@@ -302,7 +302,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum ron1 = new MusicianAlbum()
             {
-                Id = 6,
+                Id = 15,
                 MusicianId = 4,
                 AlbumId = 1,
             };
@@ -310,7 +310,7 @@ namespace Jazzima1.Data
 
             MusicianAlbum ron2 = new MusicianAlbum()
             {
-                Id = 7,
+                Id = 16,
                 MusicianId = 4,
                 AlbumId = 3,
             };
