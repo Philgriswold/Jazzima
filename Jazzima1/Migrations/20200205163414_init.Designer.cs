@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200204163305_updated pics")]
-    partial class updatedpics
+    [Migration("20200205163414_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,9 +27,6 @@ namespace Jazzima1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -65,6 +62,20 @@ namespace Jazzima1.Migrations
                             Image = "https://upload.wikimedia.org/wikipedia/en/4/41/The_Soothsayer.jpg",
                             ReleaseDate = 1979,
                             Title = "The Soothsayer"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/c/c0/Horace_Silver_and_the_Jazz_Messengers.jpg",
+                            ReleaseDate = 1956,
+                            Title = "Horace Silver and The Jazz Messengers"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/6/68/John_Coltrane_-_Blue_Train.jpg",
+                            ReleaseDate = 1958,
+                            Title = "Blue Train"
                         });
                 });
 
@@ -89,6 +100,43 @@ namespace Jazzima1.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("Jazzima1.Models.InstrumentType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InstrumentType");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Horn"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Piano"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Bass"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Drums"
+                        });
+                });
+
             modelBuilder.Entity("Jazzima1.Models.Musician", b =>
                 {
                     b.Property<int>("Id")
@@ -99,10 +147,15 @@ namespace Jazzima1.Migrations
                     b.Property<string>("Instrument")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("InstrumentTypeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("InstrumentTypeId");
 
                     b.ToTable("Musician");
 
@@ -111,79 +164,120 @@ namespace Jazzima1.Migrations
                         {
                             Id = 1,
                             Instrument = "piano",
+                            InstrumentTypeId = 2,
                             Name = "Herbie Hancock"
                         },
                         new
                         {
                             Id = 2,
                             Instrument = "trumpet",
+                            InstrumentTypeId = 1,
                             Name = "Freddie Hubbard"
                         },
                         new
                         {
                             Id = 3,
                             Instrument = "tenor saxophone",
+                            InstrumentTypeId = 1,
                             Name = "George Coleman"
                         },
                         new
                         {
                             Id = 4,
                             Instrument = "bass",
+                            InstrumentTypeId = 3,
                             Name = "Ron Carter"
                         },
                         new
                         {
                             Id = 5,
                             Instrument = "drums",
+                            InstrumentTypeId = 4,
                             Name = "Tony Williams"
                         },
                         new
                         {
                             Id = 6,
                             Instrument = "trumpet",
+                            InstrumentTypeId = 1,
                             Name = "Kenny Dorham"
                         },
                         new
                         {
                             Id = 7,
                             Instrument = "alto saxophone",
+                            InstrumentTypeId = 1,
                             Name = "Eric Dolphy"
                         },
                         new
                         {
                             Id = 8,
                             Instrument = "tenor saxophone",
+                            InstrumentTypeId = 1,
                             Name = "Joe Henderson"
                         },
                         new
                         {
                             Id = 9,
                             Instrument = "piano",
+                            InstrumentTypeId = 2,
                             Name = "Andrew Hill"
                         },
                         new
                         {
                             Id = 10,
                             Instrument = "bass",
+                            InstrumentTypeId = 3,
                             Name = "Richard Davis"
                         },
                         new
                         {
                             Id = 11,
                             Instrument = "tenor saxophone",
+                            InstrumentTypeId = 1,
                             Name = "Wayne Shorter"
                         },
                         new
                         {
                             Id = 12,
                             Instrument = "alto saxophone",
+                            InstrumentTypeId = 1,
                             Name = "James Spaulding"
                         },
                         new
                         {
                             Id = 13,
                             Instrument = "piano",
+                            InstrumentTypeId = 2,
                             Name = "McCoy Tyner"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Instrument = "piano",
+                            InstrumentTypeId = 2,
+                            Name = "Horace Silver"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Instrument = "tenor saxophone",
+                            InstrumentTypeId = 1,
+                            Name = "Hank Mobley"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Instrument = "bass",
+                            InstrumentTypeId = 3,
+                            Name = "Doug Watkins"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Instrument = "drums",
+                            InstrumentTypeId = 4,
+                            Name = "Art Blakey"
                         });
                 });
 
@@ -300,6 +394,36 @@ namespace Jazzima1.Migrations
                             Id = 16,
                             AlbumId = 3,
                             MusicianId = 4
+                        },
+                        new
+                        {
+                            Id = 17,
+                            AlbumId = 4,
+                            MusicianId = 14
+                        },
+                        new
+                        {
+                            Id = 18,
+                            AlbumId = 4,
+                            MusicianId = 6
+                        },
+                        new
+                        {
+                            Id = 19,
+                            AlbumId = 4,
+                            MusicianId = 15
+                        },
+                        new
+                        {
+                            Id = 20,
+                            AlbumId = 4,
+                            MusicianId = 16
+                        },
+                        new
+                        {
+                            Id = 21,
+                            AlbumId = 4,
+                            MusicianId = 17
                         });
                 });
 
@@ -556,13 +680,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2a54d0e6-47dc-4c7b-bc3e-39680a87e891",
+                            ConcurrencyStamp = "ba7cc1cd-45e8-477e-b97a-3957ffa50fca",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHMOyUzlAp9wgNgxUi+OJJ+5vDUpHianxs+KXEHC6kmZfGZ7I5O1pq5/4scCdKrYiQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJtWI9vCgrqWbMDYV4zJE8LXjCvrxdOvoi6tY2+/zc0rrpuZs5KiIzdKu7izr3HUhA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -570,6 +694,15 @@ namespace Jazzima1.Migrations
                             FirstName = "admin",
                             LastName = "admin"
                         });
+                });
+
+            modelBuilder.Entity("Jazzima1.Models.Musician", b =>
+                {
+                    b.HasOne("Jazzima1.Models.InstrumentType", "InstrumentType")
+                        .WithMany()
+                        .HasForeignKey("InstrumentTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Jazzima1.Models.SavedAlbum", b =>

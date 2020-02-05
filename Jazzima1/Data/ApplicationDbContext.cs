@@ -21,6 +21,7 @@ namespace Jazzima1.Data
         public DbSet<MusicianAlbum> MusicianAlbum { get; set; }
         public DbSet<SavedAlbum> SavedAlbums { get; set; }
         public DbSet<Comments> Comments { get; set; }
+        public DbSet<InstrumentType> InstrumentType { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -76,6 +77,57 @@ namespace Jazzima1.Data
             };
             modelBuilder.Entity<Album>().HasData(theSoothsayer);
 
+            Album horaceSilverJM = new Album()
+            {
+                Id = 4,
+                Title = "Horace Silver and The Jazz Messengers",
+                ReleaseDate = 1956,
+                Image = "https://upload.wikimedia.org/wikipedia/en/c/c0/Horace_Silver_and_the_Jazz_Messengers.jpg"
+
+            };
+            modelBuilder.Entity<Album>().HasData(horaceSilverJM);
+
+            Album blueTrain = new Album()
+            {
+                Id = 5,
+                Title = "Blue Train",
+                ReleaseDate = 1958,
+                Image = "https://upload.wikimedia.org/wikipedia/en/6/68/John_Coltrane_-_Blue_Train.jpg"
+
+            };
+            modelBuilder.Entity<Album>().HasData(blueTrain);
+
+            // FOUR RECORDS FOR INSTRUMENT TYPE
+
+            InstrumentType horn = new InstrumentType()
+            {
+                Id = 1,
+                Description = "Horn",
+            };
+            modelBuilder.Entity<InstrumentType>().HasData(horn);
+
+            InstrumentType piano = new InstrumentType()
+            {
+                Id = 2,
+                Description = "Piano",
+            };
+            modelBuilder.Entity<InstrumentType>().HasData(piano);
+
+            InstrumentType bass = new InstrumentType()
+            {
+                Id = 3,
+                Description = "Bass",
+            };
+            modelBuilder.Entity<InstrumentType>().HasData(bass);
+
+            InstrumentType drums = new InstrumentType()
+            {
+                Id = 4,
+                Description = "Drums",
+            };
+            modelBuilder.Entity<InstrumentType>().HasData(drums);
+
+
 
 
             // CREATING MUSICIANS FOR THE DATABASE
@@ -85,6 +137,7 @@ namespace Jazzima1.Data
                 Id = 1,
                 Name = "Herbie Hancock",
                 Instrument = "piano",
+                InstrumentTypeId = 2,
             };
             modelBuilder.Entity<Musician>().HasData(herbieHancock);
 
@@ -93,6 +146,7 @@ namespace Jazzima1.Data
                 Id = 2,
                 Name = "Freddie Hubbard",
                 Instrument = "trumpet",
+                InstrumentTypeId = 1,
             };
             modelBuilder.Entity<Musician>().HasData(freddieHubbard);
 
@@ -101,6 +155,7 @@ namespace Jazzima1.Data
                 Id = 3,
                 Name = "George Coleman",
                 Instrument = "tenor saxophone",
+                InstrumentTypeId = 1,
             };
             modelBuilder.Entity<Musician>().HasData(georgeColeman);
 
@@ -109,6 +164,7 @@ namespace Jazzima1.Data
                 Id = 4,
                 Name = "Ron Carter",
                 Instrument = "bass",
+                InstrumentTypeId = 3,
             };
             modelBuilder.Entity<Musician>().HasData(ronCarter);
 
@@ -117,6 +173,7 @@ namespace Jazzima1.Data
                 Id = 5,
                 Name = "Tony Williams",
                 Instrument = "drums",
+                InstrumentTypeId = 4,
             };
             modelBuilder.Entity<Musician>().HasData(tonyWilliams);
 
@@ -125,6 +182,7 @@ namespace Jazzima1.Data
                 Id = 6,
                 Name = "Kenny Dorham",
                 Instrument = "trumpet",
+                InstrumentTypeId = 1,
             };
             modelBuilder.Entity<Musician>().HasData(kennyDorham);
 
@@ -133,6 +191,7 @@ namespace Jazzima1.Data
                 Id = 7,
                 Name = "Eric Dolphy",
                 Instrument = "alto saxophone",
+                InstrumentTypeId = 1,
             };
             modelBuilder.Entity<Musician>().HasData(ericDolphy);
 
@@ -141,6 +200,7 @@ namespace Jazzima1.Data
                 Id = 8,
                 Name = "Joe Henderson",
                 Instrument = "tenor saxophone",
+                InstrumentTypeId = 1,
             };
             modelBuilder.Entity<Musician>().HasData(joeHenderson);
 
@@ -149,6 +209,7 @@ namespace Jazzima1.Data
                 Id = 9,
                 Name = "Andrew Hill",
                 Instrument = "piano",
+                InstrumentTypeId = 2,
             };
             modelBuilder.Entity<Musician>().HasData(andrewHill);
 
@@ -157,6 +218,7 @@ namespace Jazzima1.Data
                 Id = 10,
                 Name = "Richard Davis",
                 Instrument = "bass",
+                InstrumentTypeId = 3,
             };
             modelBuilder.Entity<Musician>().HasData(richardDavis);
 
@@ -165,6 +227,7 @@ namespace Jazzima1.Data
                 Id = 11,
                 Name = "Wayne Shorter",
                 Instrument = "tenor saxophone",
+                InstrumentTypeId = 1,
             };
             modelBuilder.Entity<Musician>().HasData(wayneShorter);
 
@@ -173,6 +236,7 @@ namespace Jazzima1.Data
                 Id = 12,
                 Name = "James Spaulding",
                 Instrument = "alto saxophone",
+                InstrumentTypeId = 1,
             };
             modelBuilder.Entity<Musician>().HasData(jamesSpaulding);
 
@@ -181,140 +245,275 @@ namespace Jazzima1.Data
                 Id = 13,
                 Name = "McCoy Tyner",
                 Instrument = "piano",
+                InstrumentTypeId = 2,
             };
             modelBuilder.Entity<Musician>().HasData(mccoyTyner);
+
+            Musician horaceSilver = new Musician()
+            {
+                Id = 14,
+                Name = "Horace Silver",
+                Instrument = "piano",
+                InstrumentTypeId = 2,
+            };
+            modelBuilder.Entity<Musician>().HasData(horaceSilver);
+
+            Musician hankMobley = new Musician()
+            {
+                Id = 15,
+                Name = "Hank Mobley",
+                Instrument = "tenor saxophone",
+                InstrumentTypeId = 1,
+            };
+            modelBuilder.Entity<Musician>().HasData(hankMobley);
+
+            Musician dougWatkins = new Musician()
+            {
+                Id = 16,
+                Name = "Doug Watkins",
+                Instrument = "bass",
+                InstrumentTypeId = 3,
+            };
+            modelBuilder.Entity<Musician>().HasData(dougWatkins);
+
+            Musician artBlakey = new Musician()
+            {
+                Id = 17,
+                Name = "Art Blakey",
+                Instrument = "drums",
+                InstrumentTypeId = 4,
+            };
+            modelBuilder.Entity<Musician>().HasData(artBlakey);
+
+            Musician phillyJoeJones = new Musician()
+            {
+                Id = 18,
+                Name = "Philly Joe Jones",
+                Instrument = "drums",
+                InstrumentTypeId = 4,
+            };
+            modelBuilder.Entity<Musician>().HasData(phillyJoeJones);
+
+            Musician paulChambers = new Musician()
+            {
+                Id = 19,
+                Name = "Paul Chambers",
+                Instrument = "bass",
+                InstrumentTypeId = 3,
+            };
+            modelBuilder.Entity<Musician>().HasData(paulChambers);
+
+            Musician kennyDrew = new Musician()
+            {
+                Id = 20,
+                Name = "Kenny Drew",
+                Instrument = "piano",
+                InstrumentTypeId = 2,
+            };
+            modelBuilder.Entity<Musician>().HasData(kennyDrew);
+
+            Musician curtisFuller = new Musician()
+            {
+                Id = 21,
+                Name = "Curtis Fuller",
+                Instrument = "trombone",
+                InstrumentTypeId = 1,
+            };
+            modelBuilder.Entity<Musician>().HasData(curtisFuller);
+
+            Musician leeMorgan = new Musician()
+            {
+                Id = 22,
+                Name = "Lee Morgan",
+                Instrument = "trumpet",
+                InstrumentTypeId = 1,
+            };
+            modelBuilder.Entity<Musician>().HasData(leeMorgan);
+
+            Musician johnColtrane = new Musician()
+            {
+                Id = 19,
+                Name = "John Coltrane",
+                Instrument = "tenor saxophone",
+                InstrumentTypeId = 1,
+            };
+            modelBuilder.Entity<Musician>().HasData(johnColtrane);
 
 
 
             // CREATING MUSICIAN/ALBUM JOIN TABLES
-            MusicianAlbum herbie1 = new MusicianAlbum()
+            MusicianAlbum herbieMaidenVoyage = new MusicianAlbum()
             {
                 Id = 1,
                 MusicianId = 1,
                 AlbumId = maidenVoyage.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(herbie1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(herbieMaidenVoyage);
 
-            MusicianAlbum freddie1 = new MusicianAlbum()
+            MusicianAlbum freddieMaidenVoyage = new MusicianAlbum()
             {
                 Id = 2,
                 MusicianId = 2,
                 AlbumId = maidenVoyage.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(freddie1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(freddieMaidenVoyage);
 
-            MusicianAlbum freddie2 = new MusicianAlbum()
+            MusicianAlbum freddieTheSoothsayer = new MusicianAlbum()
             {
                 Id = 3,
                 MusicianId = 2,
                 AlbumId = theSoothsayer.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(freddie2);
+            modelBuilder.Entity<MusicianAlbum>().HasData(freddieTheSoothsayer);
 
-            MusicianAlbum george1 = new MusicianAlbum()
+            MusicianAlbum georgeMaidenVoyage = new MusicianAlbum()
             {
                 Id = 4,
                 MusicianId = 3,
                 AlbumId = maidenVoyage.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(george1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(georgeMaidenVoyage);
 
-            MusicianAlbum kenny1 = new MusicianAlbum()
+            MusicianAlbum kennyPointOfDeparture = new MusicianAlbum()
             {
                 Id = 5,
                 MusicianId = 6,
                 AlbumId = pointOfDeparture.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(kenny1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(kennyPointOfDeparture);
 
-            MusicianAlbum eric1 = new MusicianAlbum()
+            MusicianAlbum ericPointOfDeparture = new MusicianAlbum()
             {
                 Id = 6,
                 MusicianId = 7,
                 AlbumId = pointOfDeparture.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(eric1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(ericPointOfDeparture);
 
-            MusicianAlbum joe1 = new MusicianAlbum()
+            MusicianAlbum joePointOfDeparture = new MusicianAlbum()
             {
                 Id = 7,
                 MusicianId = 8,
                 AlbumId = pointOfDeparture.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(joe1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(joePointOfDeparture);
 
-            MusicianAlbum andrew1 = new MusicianAlbum()
+            MusicianAlbum andrewPointOfDeparture = new MusicianAlbum()
             {
                 Id = 8,
                 MusicianId = 9,
                 AlbumId = pointOfDeparture.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(andrew1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(andrewPointOfDeparture);
 
-            MusicianAlbum richard1 = new MusicianAlbum()
+            MusicianAlbum richardPointOfDeparture = new MusicianAlbum()
             {
                 Id = 9,
                 MusicianId = 10,
                 AlbumId = pointOfDeparture.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(richard1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(richardPointOfDeparture);
 
-            MusicianAlbum wayne1 = new MusicianAlbum()
+            MusicianAlbum wayneTheSoothsayer = new MusicianAlbum()
             {
                 Id = 10,
                 MusicianId = 11,
                 AlbumId = theSoothsayer.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(wayne1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(wayneTheSoothsayer);
 
-            MusicianAlbum james1 = new MusicianAlbum()
+            MusicianAlbum jamesTheSoothsayer = new MusicianAlbum()
             {
                 Id = 11,
                 MusicianId = 12,
                 AlbumId = theSoothsayer.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(james1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(jamesTheSoothsayer);
 
-            MusicianAlbum mccoy1 = new MusicianAlbum()
+            MusicianAlbum mccoyTheSoothsayer = new MusicianAlbum()
             {
                 Id = 12,
                 MusicianId = 13,
                 AlbumId = theSoothsayer.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(mccoy1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(mccoyTheSoothsayer);
 
 
-            MusicianAlbum tony1 = new MusicianAlbum()
+            MusicianAlbum tonyMaidenVoyage = new MusicianAlbum()
             {
                 Id = 13,
                 MusicianId = 5,
                 AlbumId = maidenVoyage.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(tony1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(tonyMaidenVoyage);
 
-            MusicianAlbum tony2 = new MusicianAlbum()
+            MusicianAlbum tonyPointOfDeparture = new MusicianAlbum()
             {
                 Id = 14,
                 MusicianId = 5,
-                AlbumId = 2,
+                AlbumId = pointOfDeparture.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(tony2);
+            modelBuilder.Entity<MusicianAlbum>().HasData(tonyPointOfDeparture);
 
-            MusicianAlbum ron1 = new MusicianAlbum()
+            MusicianAlbum ronMaidenVoyage = new MusicianAlbum()
             {
                 Id = 15,
                 MusicianId = 4,
-                AlbumId = 1,
+                AlbumId = maidenVoyage.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(ron1);
+            modelBuilder.Entity<MusicianAlbum>().HasData(ronMaidenVoyage);
 
-            MusicianAlbum ron2 = new MusicianAlbum()
+            MusicianAlbum ronTheSoothsayer = new MusicianAlbum()
             {
                 Id = 16,
                 MusicianId = 4,
-                AlbumId = 3,
+                AlbumId = theSoothsayer.Id,
             };
-            modelBuilder.Entity<MusicianAlbum>().HasData(ron2);
+            modelBuilder.Entity<MusicianAlbum>().HasData(ronTheSoothsayer);
+
+            MusicianAlbum horaceHorace = new MusicianAlbum()
+            {
+                Id = 17,
+                MusicianId = 14,
+                AlbumId = horaceSilverJM.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(horaceHorace);
+
+            MusicianAlbum kennyHorace = new MusicianAlbum()
+            {
+                Id = 18,
+                MusicianId = 6,
+                AlbumId = horaceSilverJM.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(kennyHorace);
+
+            MusicianAlbum hankHorace = new MusicianAlbum()
+            {
+                Id = 19,
+                MusicianId = 15,
+                AlbumId = horaceSilverJM.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(hankHorace);
+
+            MusicianAlbum dougHorace = new MusicianAlbum()
+            {
+                Id = 20,
+                MusicianId = 16,
+                AlbumId = horaceSilverJM.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(dougHorace);
+
+            MusicianAlbum artHorace = new MusicianAlbum()
+            {
+                Id = 21,
+                MusicianId = 17,
+                AlbumId = horaceSilverJM.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(artHorace);
+
+
+
+
 
 
             //CREATE USER RELATED SAVED ALBUMS

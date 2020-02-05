@@ -5,11 +5,9 @@ using System.Threading.Tasks;
 
 namespace Jazzima1.Models
 {
-    public class Album
+    public class InstrumentType
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public int ReleaseDate { get; set; }
-        public string Image { get; set; }
+        public string Description { get; set; }
     }
 }

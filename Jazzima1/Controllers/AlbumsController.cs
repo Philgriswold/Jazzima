@@ -37,9 +37,10 @@ namespace Jazzima1.Controllers
             {
                 return NotFound();
             }
-
+            var user = await GetCurrentUserAsync();
             var album = await _context.Album
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (album == null)
             {
                 return NotFound();
