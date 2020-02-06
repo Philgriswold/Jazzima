@@ -184,18 +184,104 @@ namespace Jazzima1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(MusicianAlbumViewModel musicianAlbumViewModel)
         {
+
             MusicianAlbumViewModel vm = new MusicianAlbumViewModel()
             {
+                
                 HornPlayers = new List<SelectListItem>(),
                 PianoPlayers = new List<SelectListItem>(),
-                BassPlayers = new List <SelectListItem>(),
-                DrumPlayers = new List <SelectListItem>(),
-
+                BassPlayers = new List<SelectListItem>(),
+                DrumPlayers = new List<SelectListItem>(),
             };
 
+            var maDb = _context.MusicianAlbum.Include(vm => vm.Album)
+                .Where(ma => ma.MusicianId == musicianAlbumViewModel.HornId && ma.MusicianId == musicianAlbumViewModel.PianoId && ma.MusicianId == musicianAlbumViewModel.BassId && ma.MusicianId == musicianAlbumViewModel.DrumId).Select(ma =>
+                new Album
+                {
+                    Title = ma.Album.Title
 
-            var albumDb = _context.Album;
-            vm.MatchingAlbums = albumDb.ToList(); 
+                }).ToList();
+
+
+
+
+            //var albumDb = _context.Album;
+            //vm.MatchingAlbums = albumDb.ToList();
+
+
+
+
+            var hornPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(1));
+
+            List<SelectListItem> hornList = new List<SelectListItem>();
+            foreach (var h in hornPlayerDB)
+            {
+                SelectListItem hornListItem = new SelectListItem
+                {
+                    Value = h.Id.ToString(),
+                    Text = h.Name
+                };
+                hornList.Add(hornListItem);
+            }
+
+            vm.HornPlayers = hornList;
+
+
+            //PIANO PLAYERS--------------------------------------------------------------------------------
+
+            var pianoPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(2));
+
+            List<SelectListItem> pianoList = new List<SelectListItem>();
+            foreach (var p in pianoPlayerDB)
+            {
+                SelectListItem pianoListItem = new SelectListItem
+                {
+                    Value = p.Id.ToString(),
+                    Text = p.Name
+                };
+                pianoList.Add(pianoListItem);
+            }
+
+            vm.PianoPlayers = pianoList;
+
+
+            //BASS PLAYERS----------------------------------------------------------------------------------
+
+            var bassPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(3));
+
+            List<SelectListItem> bassList = new List<SelectListItem>();
+            foreach (var b in bassPlayerDB)
+            {
+                SelectListItem bassListItem = new SelectListItem
+                {
+                    Value = b.Id.ToString(),
+                    Text = b.Name
+                };
+                bassList.Add(bassListItem);
+            }
+
+            vm.BassPlayers = bassList;
+
+
+
+            //DRUM PLAYERS------------------------------------------------------------------------------------
+
+            var drumPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(4));
+
+            List<SelectListItem> drumList = new List<SelectListItem>();
+            foreach (var d in drumPlayerDB)
+            {
+                SelectListItem drumListItem = new SelectListItem
+                {
+                    Value = d.Id.ToString(),
+                    Text = d.Name
+                };
+                drumList.Add(drumListItem);
+            }
+
+            vm.DrumPlayers = drumList;
+
+
 
             return View(vm);
 

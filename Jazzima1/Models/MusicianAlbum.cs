@@ -10,5 +10,7 @@ namespace Jazzima1.Models
         public int Id { get; set; }
         public int MusicianId { get; set; }
         public int AlbumId { get; set; }
+        public Album Album { get; set; }
+        public Musician Musician { get; set; }
     }
 }
