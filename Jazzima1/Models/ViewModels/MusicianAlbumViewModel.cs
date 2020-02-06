@@ -8,14 +8,18 @@ namespace Jazzima1.Models.ViewModels
 {
     public class MusicianAlbumViewModel
     {
+        //thiese are the ones the user slects
         public int HornId { get; set; }
         public int PianoId { get; set; }
         public int BassId { get; set; }
         public int DrumId { get; set; }
-        public SelectList HornPlayers { get; set; }
-        public SelectList PianoPlayers { get; set; }
-        public SelectList BassPlayers { get; set; }
-        public SelectList Drummers { get; set; }
+        //these are the ones we show
+        public List<Musician> HornPlayers { get; set; }
+        public List<SelectListItem> HornPlayersSelect { get; set; }
+
+        public List<SelectListItem> PianoPlayers { get; set; }
+        public List<SelectListItem> BassPlayers { get; set; }
+        public List<SelectListItem> DrumPlayers { get; set; }
         public List<Album> MatchingAlbums { get; set; }
 
     }

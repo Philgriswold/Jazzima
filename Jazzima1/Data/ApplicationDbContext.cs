@@ -332,7 +332,7 @@ namespace Jazzima1.Data
 
             Musician johnColtrane = new Musician()
             {
-                Id = 19,
+                Id = 23,
                 Name = "John Coltrane",
                 Instrument = "tenor saxophone",
                 InstrumentTypeId = 1,
@@ -510,6 +510,54 @@ namespace Jazzima1.Data
                 AlbumId = horaceSilverJM.Id,
             };
             modelBuilder.Entity<MusicianAlbum>().HasData(artHorace);
+
+            MusicianAlbum johnBlueTrain = new MusicianAlbum()
+            {
+                Id = 22,
+                MusicianId = 23,
+                AlbumId = blueTrain.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(johnBlueTrain);
+
+            MusicianAlbum curtisBlueTrain = new MusicianAlbum()
+            {
+                Id = 23,
+                MusicianId = 21,
+                AlbumId = blueTrain.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(curtisBlueTrain);
+
+            MusicianAlbum kennyBlueTrain = new MusicianAlbum()
+            {
+                Id = 24,
+                MusicianId = 20,
+                AlbumId = blueTrain.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(kennyBlueTrain);
+
+            MusicianAlbum leeBlueTrain = new MusicianAlbum()
+            {
+                Id = 25,
+                MusicianId = 22,
+                AlbumId = blueTrain.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(leeBlueTrain);
+
+            MusicianAlbum paulBlueTrain = new MusicianAlbum()
+            {
+                Id = 26,
+                MusicianId = 19,
+                AlbumId = blueTrain.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(paulBlueTrain);
+
+            MusicianAlbum phillyJoeBlueTrain = new MusicianAlbum()
+            {
+                Id = 27,
+                MusicianId = 18,
+                AlbumId = blueTrain.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(phillyJoeBlueTrain);
 
 
 
