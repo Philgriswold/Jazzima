@@ -9,115 +9,97 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<form asp-action="Index">
 
-    <tbody>
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => Model.HornPlayers)
-            </td>
-            <td>
-                @foreach (var player in ViewBag.HornPlayers)
-                {
+
+
+
+
+
+
+    <label class="control-label">Horn Players</label>
+    <select asp-for="HornId" class="form-control" asp-items="Model.HornPlayers"></select>
+
+    @*----------------------------------------------------------------*@
+
+
+
+
+
+    <label class="control-label">Pianists</label>
+    <select asp-for="PianoId" class="form-control" asp-items="Model.PianoPlayers"></select>
+
+    @*------------------------------------------------------------------------*@
+
+
+
+    <label class="control-label">Bassists</label>
+    <select asp-for="BassId" class="form-control" asp-items="Model.BassPlayers"></select>
+
+    @*--------------------------------------------------------------------------------*@
+
+    <label class="control-label">Drummers</label>
+    <select asp-for="DrumId" class="form-control" asp-items="Model.DrumPlayers"></select>
+
+
+    @*-------------------------------------------------------------------------------------*@
+
+
+
+    @*<tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReleaseDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+        <tbody>*@
+
+    @*@foreach (var item in Model.MatchingAlbums)
+        {
+            <tr>
                 <td>
-                    @player.Name;
-                </td>
-            }
-                @*@ViewBag.HornPlayers*@
-                </td>
-                @Html.DropDownList("HornGuys", "Select a horn player")
-
-                @*----------------------------------------------------------------*@
-
-                <td>
-                    @Html.DisplayFor(modelItem => Model.PianoPlayers)
+                    @Html.DisplayFor(modelItem => item.Title)
                 </td>
                 <td>
-                    @foreach (var player in ViewBag.PianoPlayers)
-                    {
-                    <td>
-                        @player.Name;
-                    </td>
-                }
-                    @*@ViewBag.PianoPlayers*@
-                    </td>
-                    @Html.DropDownList("PianoGuys", "Select a piano player")
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>*@
+    @*<div class="form-group">
+            <label asp-for="HornId" class="control-label"></label>
+            <select asp-for="HornId" class="form-control" asp-items="ViewBag.HornPlayers"></select>
+            <span asp-validation-for="HornId" class="text-danger"></span>
+        </div>*@
+    @*<td>
+            <img class="img-thumbnail" style="max-width: 150px;" src="@item.Image" alt="" />
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>*@
 
-                    @*------------------------------------------------------------------------*@
 
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.BassPlayers)
-                    </td>
-                    <td>
-                        @foreach (var player in ViewBag.BassPlayers)
-                        {
-                        <td>
-                            @player.Name;
-                        </td>
-                    }
-                        @*@ViewBag.BassPlayers*@
-                        </td>
-                        @Html.DropDownList("BassGuys", "Select a bass player")
 
-                        @*--------------------------------------------------------------------------------*@
 
-                        <td>
-                            @Html.DisplayFor(modelItem => Model.DrumPlayers)
-                        </td>
-                        <td>
-                            @foreach (var player in ViewBag.DrumPlayers)
-                            {
-                            <td>
-                                @player.Name;
-                            </td>
-                        }
-                            @*@ViewBag.DrumPlayers*@
-                            </td>
-                            @Html.DropDownList("DrumGuys", "Select a drummer")
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </div>
+</form>
+@if (Model.MatchingAlbums != null)
+{
+    @foreach (var album in Model.MatchingAlbums)
+    {
+          <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
+    }
 
-                            @*-------------------------------------------------------------------------------------*@
+};
 
-                        @*<tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Title)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ReleaseDate)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Image)
-                            </th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                    <tbody>*@
-
-                        @*@foreach (var item in Model.MatchingAlbums)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Title)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ReleaseDate)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Image)
-                                </td>*@
-                                @*<div class="form-group">
-                                        <label asp-for="HornId" class="control-label"></label>
-                                        <select asp-for="HornId" class="form-control" asp-items="ViewBag.HornPlayers"></select>
-                                        <span asp-validation-for="HornId" class="text-danger"></span>
-                                    </div>*@
-                                @*<td>
-                                        <img class="img-thumbnail" style="max-width: 150px;" src="@item.Image" alt="" />
-                                    </td>
-                                    <td>
-                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                    </td>*@
-                            </tr>
-                        
-                   </tbody>
-        </table>

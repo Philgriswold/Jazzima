@@ -39,6 +39,7 @@ namespace Jazzima1.Controllers
             //fourth put return view - lists into corresponding view model
 
             // HORN PLAYERS
+          
             var hornPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(1));
 
             List<SelectListItem> hornList = new List<SelectListItem>();
@@ -51,19 +52,12 @@ namespace Jazzima1.Controllers
                 };
                 hornList.Add(hornListItem);           
             }
-         // MAviewModel.HornPlayers = hornList;
 
-           ViewBag.HornPlayers = hornPlayerDB;
-            ViewBag.HornGuys = hornList;
-
-            var hornSelectList = new SelectList(hornList);
-
-            MAviewModel.HornPlayersSelect = hornList;
-
-            ViewBag.HornPlayerList = hornSelectList;
+            MAviewModel.HornPlayers = hornList;
 
 
             //PIANO PLAYERS--------------------------------------------------------------------------------
+          
             var pianoPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(2));
 
             List<SelectListItem> pianoList = new List<SelectListItem>();
@@ -76,18 +70,12 @@ namespace Jazzima1.Controllers
                 };
                 pianoList.Add(pianoListItem);
             }
-            // MAviewModel.PianoPlayers = pianoList;
 
-            ViewBag.PianoPlayers = pianoPlayerDB;
-            ViewBag.PianoGuys = pianoList;
+            MAviewModel.PianoPlayers = pianoList;
 
-            var pianoSelectList = new SelectList(pianoList);
-
-            MAviewModel.PianoPlayersSelect = pianoList;
-
-            ViewBag.PianoPlayerList = pianoSelectList;
 
             //BASS PLAYERS----------------------------------------------------------------------------------
+          
             var bassPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(3));
 
             List<SelectListItem> bassList = new List<SelectListItem>();
@@ -100,18 +88,13 @@ namespace Jazzima1.Controllers
                 };
                 bassList.Add(bassListItem);
             }
-            // MAviewModel.BassPlayers = bassList;
 
-            ViewBag.BassPlayers = bassPlayerDB;
-            ViewBag.BassGuys = bassList;
+            MAviewModel.BassPlayers = bassList;
 
-            var bassSelectList = new SelectList(bassList);
 
-            MAviewModel.BassPlayersSelect = bassList;
-
-            ViewBag.BassPlayerList = bassSelectList;
 
             //DRUM PLAYERS------------------------------------------------------------------------------------
+           
             var drumPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(4));
 
             List<SelectListItem> drumList = new List<SelectListItem>();
@@ -124,16 +107,9 @@ namespace Jazzima1.Controllers
                 };
                 drumList.Add(drumListItem);
             }
-            // MAviewModel.DrumPlayers = drumList;
 
-            ViewBag.DrumPlayers = drumPlayerDB;
-            ViewBag.DrumGuys = drumList;
+            MAviewModel.DrumPlayers = drumList;
 
-            var drumSelectList = new SelectList(drumList);
-
-            MAviewModel.DrumPlayersSelect = drumList;
-
-            ViewBag.DrumPlayerList = drumSelectList;
 
 
 
@@ -182,7 +158,7 @@ namespace Jazzima1.Controllers
 
             ////var Musicians = new selectList.Musician( "Id", "Name");
 
-            var user = await GetCurrentUserAsync();
+            //var user = await GetCurrentUserAsync();
             var AlbumDb = _context.Album;
            // .FirstOrDefaultAsync(m => m.Id == id);
             return View(MAviewModel);
@@ -203,6 +179,32 @@ namespace Jazzima1.Controllers
 
             // VAR MUSICIANS = new selectList(Musicians, "Id", "Name)
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(MusicianAlbumViewModel musicianAlbumViewModel)
+        {
+            MusicianAlbumViewModel vm = new MusicianAlbumViewModel()
+            {
+                HornPlayers = new List<SelectListItem>(),
+                PianoPlayers = new List<SelectListItem>(),
+                BassPlayers = new List <SelectListItem>(),
+                DrumPlayers = new List <SelectListItem>(),
+
+            };
+
+
+            var albumDb = _context.Album;
+            vm.MatchingAlbums = albumDb.ToList(); 
+
+            return View(vm);
+
+            
+
+
+        }
+
+
 
         public IActionResult Privacy()
         {
