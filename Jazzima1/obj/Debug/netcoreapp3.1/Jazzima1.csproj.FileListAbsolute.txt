@@ -187,3 +187,4 @@ C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Ja
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.dll
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.pdb
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.csprojAssemblyReference.cache
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs

@@ -85,12 +85,10 @@
     {
         <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
 
-
-    <form asp-action="Details" asp-route-id="@album.Id" asp-controller="Albums">
-      
-        <input class="btn btn-success" type="submit" value="details" />
-    </form>
-        }
-
+        <form asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
+            <input class="btn btn-success" type="submit" value="details" />
+        </form>
     }
+
+}
 
