@@ -4,14 +4,16 @@ using Jazzima1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200207042103_addedTheCooker")]
+    partial class addedTheCooker
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,13 +83,6 @@ namespace Jazzima1.Migrations
                             Image = "https://upload.wikimedia.org/wikipedia/en/e/ec/The_Cooker.jpg",
                             ReleaseDate = 1958,
                             Title = "The Cooker"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Image = "https://upload.wikimedia.org/wikipedia/commons/a/ad/Somethin%E2%80%99_Else.jpg",
-                            ReleaseDate = 1958,
-                            Title = "Somethin' Else"
                         });
                 });
 
@@ -344,60 +339,8 @@ namespace Jazzima1.Migrations
                         {
                             Id = 25,
                             Instrument = "baritone saxophone",
-                            InstrumentTypeId = 1,
+                            InstrumentTypeId = 2,
                             Name = "Pepper Adams"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Instrument = "alto saxophone",
-                            InstrumentTypeId = 1,
-                            Name = "Cannonball Adderley"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Instrument = "trumpet",
-                            InstrumentTypeId = 1,
-                            Name = "Miles Davis"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2,
-                            Name = "Hank Jones"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2,
-                            Name = "Sam Jones"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Instrument = "horns",
-                            InstrumentTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Instrument = "druma",
-                            InstrumentTypeId = 4
                         });
                 });
 
@@ -614,36 +557,6 @@ namespace Jazzima1.Migrations
                             Id = 32,
                             AlbumId = 6,
                             MusicianId = 18
-                        },
-                        new
-                        {
-                            Id = 33,
-                            AlbumId = 7,
-                            MusicianId = 26
-                        },
-                        new
-                        {
-                            Id = 34,
-                            AlbumId = 7,
-                            MusicianId = 27
-                        },
-                        new
-                        {
-                            Id = 35,
-                            AlbumId = 7,
-                            MusicianId = 28
-                        },
-                        new
-                        {
-                            Id = 36,
-                            AlbumId = 7,
-                            MusicianId = 29
-                        },
-                        new
-                        {
-                            Id = 37,
-                            AlbumId = 7,
-                            MusicianId = 17
                         });
                 });
 
@@ -900,13 +813,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "867df80e-594a-4b9a-b41e-44fec5df42db",
+                            ConcurrencyStamp = "f6290802-eb0a-4957-a4a6-ace6c650a7da",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELiUJljl/gTZi7euD7QGPzSx+mv2Cn8AgM6m4wSjEULaQIUEyvxboQ1YEB3m5q06sw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAme67eIyMZwENtx7gVBbBYAdo0bNUWtbkrlzQw/7mS7CuHE3YCpWailXzTrgun+dQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -928,13 +841,13 @@ namespace Jazzima1.Migrations
             modelBuilder.Entity("Jazzima1.Models.MusicianAlbum", b =>
                 {
                     b.HasOne("Jazzima1.Models.Album", "Album")
-                        .WithMany("MusicianAlbums")
+                        .WithMany()
                         .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Jazzima1.Models.Musician", "Musician")
-                        .WithMany("MusicianAlbums")
+                        .WithMany()
                         .HasForeignKey("MusicianId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

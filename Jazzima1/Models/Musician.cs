@@ -12,5 +12,6 @@ namespace Jazzima1.Models
         public string Instrument { get; set; }
         public int InstrumentTypeId { get; set; }
         public InstrumentType InstrumentType { get; set; }
+        public List<MusicianAlbum> MusicianAlbums { get; set; }
     }
 }

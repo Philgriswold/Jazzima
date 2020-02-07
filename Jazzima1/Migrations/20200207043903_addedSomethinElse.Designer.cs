@@ -4,14 +4,16 @@ using Jazzima1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200207043903_addedSomethinElse")]
+    partial class addedSomethinElse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -374,30 +376,6 @@ namespace Jazzima1.Migrations
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Sam Jones"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Instrument = "horns",
-                            InstrumentTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Instrument = "druma",
-                            InstrumentTypeId = 4
                         });
                 });
 
@@ -900,13 +878,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "867df80e-594a-4b9a-b41e-44fec5df42db",
+                            ConcurrencyStamp = "e65fb911-5173-4d07-bd4b-902477c60ba4",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELiUJljl/gTZi7euD7QGPzSx+mv2Cn8AgM6m4wSjEULaQIUEyvxboQ1YEB3m5q06sw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGfg8zlO4Rw/seAvU9QHhtO0gjqvoCJIvD4H8PoJsaH2S9K47TbXdCiKxtiowaQLSQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -928,13 +906,13 @@ namespace Jazzima1.Migrations
             modelBuilder.Entity("Jazzima1.Models.MusicianAlbum", b =>
                 {
                     b.HasOne("Jazzima1.Models.Album", "Album")
-                        .WithMany("MusicianAlbums")
+                        .WithMany()
                         .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Jazzima1.Models.Musician", "Musician")
-                        .WithMany("MusicianAlbums")
+                        .WithMany()
                         .HasForeignKey("MusicianId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

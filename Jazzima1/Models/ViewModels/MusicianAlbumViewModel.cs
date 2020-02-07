@@ -18,7 +18,7 @@ namespace Jazzima1.Models.ViewModels
         public List<SelectListItem> PianoPlayers { get; set; }
         public List<SelectListItem> BassPlayers { get; set; }
         public List<SelectListItem> DrumPlayers { get; set; }
-        public List<Album> MatchingAlbums { get; set; }
+        public List<Album > MatchingAlbums { get; set; }
 
     }
 }
