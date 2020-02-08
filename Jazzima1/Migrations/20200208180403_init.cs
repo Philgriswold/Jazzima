@@ -94,7 +94,7 @@ namespace Jazzima1.Migrations
                         column: x => x.AlbumId,
                         principalTable: "Album",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

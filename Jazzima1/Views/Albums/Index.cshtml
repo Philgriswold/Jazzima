@@ -8,14 +8,14 @@
 
 
 <table class="table">
-    @*<thead>
+    <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Album.Image)
             </th>
             <th></th>
         </tr>
-    </thead>*@
+    </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
@@ -28,11 +28,11 @@
                     <input class="btn btn-warning" type="submit" value="Delete" />
                 </form>
             </td>
-            @*<td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>*@
+            </td>
         </tr>
 }
     </tbody>

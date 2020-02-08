@@ -4,14 +4,16 @@ using Jazzima1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200208212058_updating2")]
+    partial class updating2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -130,27 +132,6 @@ namespace Jazzima1.Migrations
                             Image = "https://upload.wikimedia.org/wikipedia/en/9/94/AT%27s_Delight.jpg",
                             ReleaseDate = 1960,
                             Title = "A.T's Delight"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/5/5f/PageOne.jpg",
-                            ReleaseDate = 1963,
-                            Title = "Page One"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/e/e3/UnaMasDorham.jpg",
-                            ReleaseDate = 1963,
-                            Title = "Una Mas"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/e/e2/Lee_Morgan-The_Sidewinder_%28album_cover%29.jpg",
-                            ReleaseDate = 1964,
-                            Title = "The Sidewinder"
                         });
                 });
 
@@ -539,34 +520,6 @@ namespace Jazzima1.Migrations
                             Instrument = "tenor saxophone",
                             InstrumentTypeId = 1,
                             Name = "Stanley Turrentine"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3,
-                            Name = "Butch Warren"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2,
-                            Name = "Barry Harris"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3,
-                            Name = "Bob Cranshaw"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4,
-                            Name = "Billy Higgins"
                         });
                 });
 
@@ -981,96 +934,6 @@ namespace Jazzima1.Migrations
                             Id = 65,
                             AlbumId = 13,
                             MusicianId = 39
-                        },
-                        new
-                        {
-                            Id = 66,
-                            AlbumId = 14,
-                            MusicianId = 12
-                        },
-                        new
-                        {
-                            Id = 67,
-                            AlbumId = 14,
-                            MusicianId = 10
-                        },
-                        new
-                        {
-                            Id = 68,
-                            AlbumId = 14,
-                            MusicianId = 17
-                        },
-                        new
-                        {
-                            Id = 69,
-                            AlbumId = 14,
-                            MusicianId = 44
-                        },
-                        new
-                        {
-                            Id = 70,
-                            AlbumId = 14,
-                            MusicianId = 41
-                        },
-                        new
-                        {
-                            Id = 71,
-                            AlbumId = 15,
-                            MusicianId = 10
-                        },
-                        new
-                        {
-                            Id = 72,
-                            AlbumId = 15,
-                            MusicianId = 12
-                        },
-                        new
-                        {
-                            Id = 73,
-                            AlbumId = 15,
-                            MusicianId = 5
-                        },
-                        new
-                        {
-                            Id = 74,
-                            AlbumId = 15,
-                            MusicianId = 44
-                        },
-                        new
-                        {
-                            Id = 75,
-                            AlbumId = 15,
-                            MusicianId = 9
-                        },
-                        new
-                        {
-                            Id = 76,
-                            AlbumId = 16,
-                            MusicianId = 26
-                        },
-                        new
-                        {
-                            Id = 77,
-                            AlbumId = 16,
-                            MusicianId = 12
-                        },
-                        new
-                        {
-                            Id = 78,
-                            AlbumId = 16,
-                            MusicianId = 45
-                        },
-                        new
-                        {
-                            Id = 79,
-                            AlbumId = 16,
-                            MusicianId = 46
-                        },
-                        new
-                        {
-                            Id = 80,
-                            AlbumId = 16,
-                            MusicianId = 47
                         });
                 });
 
@@ -1399,13 +1262,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "29330863-ac75-4657-a217-958e097283ea",
+                            ConcurrencyStamp = "b4c066ab-3ce3-44d5-90bb-1e564bf8b7e2",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDsPTJLJaPnQ9um5B1kr+TBpTQ0wdQMqsn281lJ8kL1DfIAxiEnNRCefaQ3AmpnilQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEK0miC6oMqjFLUqD4zlAQOunZN6dsjsvH+vKsQ3wnj45HP/a/82GRAYAe7P/Jp3dhg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,

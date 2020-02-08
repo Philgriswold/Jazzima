@@ -26,8 +26,9 @@ namespace Jazzima1.Controllers
             var user = await GetCurrentUserAsync();
             var AlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
                 .Include(c => c.Album);
-                //.FirstOrDefaultAsync(m => m.Id == id);
+            //.FirstOrDefaultAsync(m => m.Id == id);
             return View(await AlbumDb.ToListAsync());
+
         }
 
         // GET: Albums/Details/5
@@ -39,6 +40,7 @@ namespace Jazzima1.Controllers
             }
             var user = await GetCurrentUserAsync();
             var album = await _context.Album
+                .Include(b => b.Comments)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (album == null)

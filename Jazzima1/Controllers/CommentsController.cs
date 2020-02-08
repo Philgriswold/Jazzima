@@ -89,7 +89,8 @@ namespace Jazzima1.Controllers
             {
                 _context.Add(comments);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Albums", new { id = id });
+                //return RedirectToAction(nameof(Index));
             }
             ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id", comments.AlbumId);
             return View(comments);
