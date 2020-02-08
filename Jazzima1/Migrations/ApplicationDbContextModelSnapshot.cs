@@ -224,229 +224,229 @@ namespace Jazzima1.Migrations
                         new
                         {
                             Id = 1,
+                            Instrument = "horns",
+                            InstrumentTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Instrument = "piano",
+                            InstrumentTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Instrument = "bass",
+                            InstrumentTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Instrument = "drums",
+                            InstrumentTypeId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Herbie Hancock"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = 6,
                             Instrument = "trumpet",
                             InstrumentTypeId = 1,
                             Name = "Freddie Hubbard"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = 7,
                             Instrument = "tenor saxophone",
                             InstrumentTypeId = 1,
                             Name = "George Coleman"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = 8,
                             Instrument = "bass",
                             InstrumentTypeId = 3,
                             Name = "Ron Carter"
                         },
                         new
                         {
-                            Id = 5,
+                            Id = 9,
                             Instrument = "drums",
                             InstrumentTypeId = 4,
                             Name = "Tony Williams"
                         },
                         new
                         {
-                            Id = 6,
+                            Id = 10,
                             Instrument = "trumpet",
                             InstrumentTypeId = 1,
                             Name = "Kenny Dorham"
                         },
                         new
                         {
-                            Id = 7,
+                            Id = 11,
                             Instrument = "alto saxophone",
                             InstrumentTypeId = 1,
                             Name = "Eric Dolphy"
                         },
                         new
                         {
-                            Id = 8,
+                            Id = 12,
                             Instrument = "tenor saxophone",
                             InstrumentTypeId = 1,
                             Name = "Joe Henderson"
                         },
                         new
                         {
-                            Id = 9,
+                            Id = 13,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Andrew Hill"
                         },
                         new
                         {
-                            Id = 10,
+                            Id = 14,
                             Instrument = "bass",
                             InstrumentTypeId = 3,
                             Name = "Richard Davis"
                         },
                         new
                         {
-                            Id = 11,
+                            Id = 15,
                             Instrument = "tenor saxophone",
                             InstrumentTypeId = 1,
                             Name = "Wayne Shorter"
                         },
                         new
                         {
-                            Id = 12,
+                            Id = 16,
                             Instrument = "alto saxophone",
                             InstrumentTypeId = 1,
                             Name = "James Spaulding"
                         },
                         new
                         {
-                            Id = 13,
+                            Id = 17,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "McCoy Tyner"
                         },
                         new
                         {
-                            Id = 14,
+                            Id = 18,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Horace Silver"
                         },
                         new
                         {
-                            Id = 15,
+                            Id = 19,
                             Instrument = "tenor saxophone",
                             InstrumentTypeId = 1,
                             Name = "Hank Mobley"
                         },
                         new
                         {
-                            Id = 16,
+                            Id = 20,
                             Instrument = "bass",
                             InstrumentTypeId = 3,
                             Name = "Doug Watkins"
                         },
                         new
                         {
-                            Id = 17,
+                            Id = 21,
                             Instrument = "drums",
                             InstrumentTypeId = 4,
                             Name = "Art Blakey"
                         },
                         new
                         {
-                            Id = 18,
+                            Id = 22,
                             Instrument = "drums",
                             InstrumentTypeId = 4,
                             Name = "Philly Joe Jones"
                         },
                         new
                         {
-                            Id = 19,
+                            Id = 23,
                             Instrument = "bass",
                             InstrumentTypeId = 3,
                             Name = "Paul Chambers"
                         },
                         new
                         {
-                            Id = 20,
+                            Id = 24,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Kenny Drew"
                         },
                         new
                         {
-                            Id = 21,
+                            Id = 25,
                             Instrument = "trombone",
                             InstrumentTypeId = 1,
                             Name = "Curtis Fuller"
                         },
                         new
                         {
-                            Id = 22,
+                            Id = 26,
                             Instrument = "trumpet",
                             InstrumentTypeId = 1,
                             Name = "Lee Morgan"
                         },
                         new
                         {
-                            Id = 23,
+                            Id = 27,
                             Instrument = "tenor saxophone",
                             InstrumentTypeId = 1,
                             Name = "John Coltrane"
                         },
                         new
                         {
-                            Id = 24,
+                            Id = 28,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Bobby Timmons"
                         },
                         new
                         {
-                            Id = 25,
+                            Id = 29,
                             Instrument = "baritone saxophone",
                             InstrumentTypeId = 1,
                             Name = "Pepper Adams"
                         },
                         new
                         {
-                            Id = 26,
+                            Id = 30,
                             Instrument = "alto saxophone",
                             InstrumentTypeId = 1,
                             Name = "Cannonball Adderley"
                         },
                         new
                         {
-                            Id = 27,
+                            Id = 31,
                             Instrument = "trumpet",
                             InstrumentTypeId = 1,
                             Name = "Miles Davis"
                         },
                         new
                         {
-                            Id = 28,
+                            Id = 32,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Hank Jones"
                         },
                         new
                         {
-                            Id = 29,
+                            Id = 33,
                             Instrument = "piano",
                             InstrumentTypeId = 2,
                             Name = "Sam Jones"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Instrument = "horns",
-                            InstrumentTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4
                         },
                         new
                         {
@@ -546,223 +546,223 @@ namespace Jazzima1.Migrations
                         {
                             Id = 1,
                             AlbumId = 1,
-                            MusicianId = 1
+                            MusicianId = 5
                         },
                         new
                         {
                             Id = 2,
                             AlbumId = 1,
-                            MusicianId = 2
+                            MusicianId = 6
                         },
                         new
                         {
                             Id = 3,
                             AlbumId = 3,
-                            MusicianId = 2
+                            MusicianId = 6
                         },
                         new
                         {
                             Id = 4,
                             AlbumId = 1,
-                            MusicianId = 3
+                            MusicianId = 7
                         },
                         new
                         {
                             Id = 5,
                             AlbumId = 2,
-                            MusicianId = 6
+                            MusicianId = 10
                         },
                         new
                         {
                             Id = 6,
                             AlbumId = 2,
-                            MusicianId = 7
+                            MusicianId = 11
                         },
                         new
                         {
                             Id = 7,
                             AlbumId = 2,
-                            MusicianId = 8
+                            MusicianId = 12
                         },
                         new
                         {
                             Id = 8,
                             AlbumId = 2,
-                            MusicianId = 9
+                            MusicianId = 13
                         },
                         new
                         {
                             Id = 9,
                             AlbumId = 2,
-                            MusicianId = 10
+                            MusicianId = 14
                         },
                         new
                         {
                             Id = 10,
                             AlbumId = 3,
-                            MusicianId = 11
+                            MusicianId = 15
                         },
                         new
                         {
                             Id = 11,
                             AlbumId = 3,
-                            MusicianId = 12
+                            MusicianId = 16
                         },
                         new
                         {
                             Id = 12,
                             AlbumId = 3,
-                            MusicianId = 13
+                            MusicianId = 17
                         },
                         new
                         {
                             Id = 13,
                             AlbumId = 1,
-                            MusicianId = 5
+                            MusicianId = 9
                         },
                         new
                         {
                             Id = 14,
                             AlbumId = 2,
-                            MusicianId = 5
+                            MusicianId = 9
                         },
                         new
                         {
                             Id = 15,
                             AlbumId = 1,
-                            MusicianId = 4
+                            MusicianId = 8
                         },
                         new
                         {
                             Id = 16,
                             AlbumId = 3,
-                            MusicianId = 4
+                            MusicianId = 8
                         },
                         new
                         {
                             Id = 17,
                             AlbumId = 4,
-                            MusicianId = 14
+                            MusicianId = 18
                         },
                         new
                         {
                             Id = 18,
                             AlbumId = 4,
-                            MusicianId = 6
+                            MusicianId = 10
                         },
                         new
                         {
                             Id = 19,
                             AlbumId = 4,
-                            MusicianId = 15
+                            MusicianId = 19
                         },
                         new
                         {
                             Id = 20,
                             AlbumId = 4,
-                            MusicianId = 16
+                            MusicianId = 20
                         },
                         new
                         {
                             Id = 21,
                             AlbumId = 4,
-                            MusicianId = 17
+                            MusicianId = 21
                         },
                         new
                         {
                             Id = 22,
                             AlbumId = 5,
-                            MusicianId = 23
+                            MusicianId = 27
                         },
                         new
                         {
                             Id = 23,
                             AlbumId = 5,
-                            MusicianId = 21
+                            MusicianId = 25
                         },
                         new
                         {
                             Id = 24,
                             AlbumId = 5,
-                            MusicianId = 20
+                            MusicianId = 24
                         },
                         new
                         {
                             Id = 25,
                             AlbumId = 5,
-                            MusicianId = 22
+                            MusicianId = 26
                         },
                         new
                         {
                             Id = 26,
                             AlbumId = 5,
-                            MusicianId = 19
+                            MusicianId = 23
                         },
                         new
                         {
                             Id = 27,
                             AlbumId = 5,
-                            MusicianId = 18
+                            MusicianId = 22
                         },
                         new
                         {
                             Id = 28,
                             AlbumId = 6,
-                            MusicianId = 22
+                            MusicianId = 26
                         },
                         new
                         {
                             Id = 29,
                             AlbumId = 6,
-                            MusicianId = 25
+                            MusicianId = 29
                         },
                         new
                         {
                             Id = 30,
                             AlbumId = 6,
-                            MusicianId = 24
+                            MusicianId = 28
                         },
                         new
                         {
                             Id = 31,
                             AlbumId = 6,
-                            MusicianId = 19
+                            MusicianId = 23
                         },
                         new
                         {
                             Id = 32,
                             AlbumId = 6,
-                            MusicianId = 18
+                            MusicianId = 22
                         },
                         new
                         {
                             Id = 33,
                             AlbumId = 7,
-                            MusicianId = 26
+                            MusicianId = 30
                         },
                         new
                         {
                             Id = 34,
                             AlbumId = 7,
-                            MusicianId = 27
+                            MusicianId = 31
                         },
                         new
                         {
                             Id = 35,
                             AlbumId = 7,
-                            MusicianId = 28
+                            MusicianId = 32
                         },
                         new
                         {
                             Id = 36,
                             AlbumId = 7,
-                            MusicianId = 29
+                            MusicianId = 33
                         },
                         new
                         {
                             Id = 37,
                             AlbumId = 7,
-                            MusicianId = 17
+                            MusicianId = 21
                         },
                         new
                         {
@@ -780,13 +780,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = 40,
                             AlbumId = 8,
-                            MusicianId = 16
+                            MusicianId = 20
                         },
                         new
                         {
                             Id = 41,
                             AlbumId = 8,
-                            MusicianId = 18
+                            MusicianId = 22
                         },
                         new
                         {
@@ -804,7 +804,7 @@ namespace Jazzima1.Migrations
                         {
                             Id = 44,
                             AlbumId = 9,
-                            MusicianId = 25
+                            MusicianId = 29
                         },
                         new
                         {
@@ -846,7 +846,7 @@ namespace Jazzima1.Migrations
                         {
                             Id = 51,
                             AlbumId = 10,
-                            MusicianId = 19
+                            MusicianId = 23
                         },
                         new
                         {
@@ -888,13 +888,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = 58,
                             AlbumId = 12,
-                            MusicianId = 2
+                            MusicianId = 6
                         },
                         new
                         {
                             Id = 59,
                             AlbumId = 12,
-                            MusicianId = 13
+                            MusicianId = 17
                         },
                         new
                         {
@@ -924,7 +924,7 @@ namespace Jazzima1.Migrations
                         {
                             Id = 64,
                             AlbumId = 13,
-                            MusicianId = 19
+                            MusicianId = 23
                         },
                         new
                         {
@@ -1259,13 +1259,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "67a1dd4f-d725-45bf-a45a-eb93f89a025f",
+                            ConcurrencyStamp = "e9a17796-07ad-4026-bf0f-dcd288ce9e1b",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAczlp0cTpKDfPBZFyZpgraUxxZqtby6S7X5rPcHzlBN7zeLZibKi75yDO+Qp5JNtA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAnO9n+0kZv2Raoe36y4aq1jDZWcPu9q56zPIotGNRbWlz+TyXyQ6Yv+IDUNNuX+9Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,

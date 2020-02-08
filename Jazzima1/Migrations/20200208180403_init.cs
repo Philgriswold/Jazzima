@@ -65,21 +65,6 @@ namespace Jazzima1.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Comments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(nullable: true),
-                    AlbumId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Comments", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "InstrumentType",
                 columns: table => new
                 {
@@ -90,20 +75,6 @@ namespace Jazzima1.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_InstrumentType", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MusicianAlbum",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MusicianId = table.Column<int>(nullable: false),
-                    AlbumId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MusicianAlbum", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -233,6 +204,34 @@ namespace Jazzima1.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Comments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Content = table.Column<string>(nullable: true),
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                    AlbumId = table.Column<int>(nullable: false),
+                    UserId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Comments_Album_AlbumId",
+                        column: x => x.AlbumId,
+                        principalTable: "Album",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Comments_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Musician",
                 columns: table => new
                 {
@@ -253,22 +252,56 @@ namespace Jazzima1.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "MusicianAlbum",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MusicianId = table.Column<int>(nullable: false),
+                    AlbumId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MusicianAlbum", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MusicianAlbum_Album_AlbumId",
+                        column: x => x.AlbumId,
+                        principalTable: "Album",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MusicianAlbum_Musician_MusicianId",
+                        column: x => x.MusicianId,
+                        principalTable: "Musician",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Album",
                 columns: new[] { "Id", "Image", "ReleaseDate", "Title" },
                 values: new object[,]
                 {
                     { 1, "https://upload.wikimedia.org/wikipedia/en/7/7a/Maiden_Voyage_%28Hancock%29.jpg", 1965, "Maiden Voyage" },
-                    { 2, "https://upload.wikimedia.org/wikipedia/en/4/4a/Point_of_Departure.jpg", 1965, "Point Of Departure" },
-                    { 3, "https://upload.wikimedia.org/wikipedia/en/4/41/The_Soothsayer.jpg", 1979, "The Soothsayer" },
+                    { 13, "https://upload.wikimedia.org/wikipedia/en/9/94/AT%27s_Delight.jpg", 1960, "A.T's Delight" },
+                    { 12, "https://upload.wikimedia.org/wikipedia/en/d/d1/Open_Sesame_%28Freddie_Hubbard_album%29.jpg", 1960, "Open Sesame" },
+                    { 11, "https://upload.wikimedia.org/wikipedia/en/f/f1/Davis_Cup_%28album%29.jpg", 1960, "Davis Cup" },
+                    { 10, "https://upload.wikimedia.org/wikipedia/en/7/78/New_Soil.jpg", 1959, "New Soil" },
+                    { 8, "https://upload.wikimedia.org/wikipedia/en/3/32/Newk%27s_Time.jpeg", 1959, "Newk's Time" },
+                    { 9, "https://upload.wikimedia.org/wikipedia/en/0/0e/Off_to_the_Races.jpg", 1959, "Off To The Races" },
+                    { 6, "https://upload.wikimedia.org/wikipedia/en/e/ec/The_Cooker.jpg", 1958, "The Cooker" },
+                    { 5, "https://upload.wikimedia.org/wikipedia/en/6/68/John_Coltrane_-_Blue_Train.jpg", 1958, "Blue Train" },
                     { 4, "https://upload.wikimedia.org/wikipedia/en/c/c0/Horace_Silver_and_the_Jazz_Messengers.jpg", 1956, "Horace Silver and The Jazz Messengers" },
-                    { 5, "https://upload.wikimedia.org/wikipedia/en/6/68/John_Coltrane_-_Blue_Train.jpg", 1958, "Blue Train" }
+                    { 3, "https://upload.wikimedia.org/wikipedia/en/4/41/The_Soothsayer.jpg", 1979, "The Soothsayer" },
+                    { 2, "https://upload.wikimedia.org/wikipedia/en/4/4a/Point_of_Departure.jpg", 1965, "Point Of Departure" },
+                    { 7, "https://upload.wikimedia.org/wikipedia/commons/a/ad/Somethin%E2%80%99_Else.jpg", 1958, "Somethin' Else" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "00000000-ffff-ffff-ffff-ffffffffffff", 0, "ba7cc1cd-45e8-477e-b97a-3957ffa50fca", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEJtWI9vCgrqWbMDYV4zJE8LXjCvrxdOvoi6tY2+/zc0rrpuZs5KiIzdKu7izr3HUhA==", null, false, "7f434309-a4d9-48e9-9ebb-8803db794577", false, "admin@admin.com", "admin", "admin" });
+                values: new object[] { "00000000-ffff-ffff-ffff-ffffffffffff", 0, "e9a17796-07ad-4026-bf0f-dcd288ce9e1b", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEAnO9n+0kZv2Raoe36y4aq1jDZWcPu9q56zPIotGNRbWlz+TyXyQ6Yv+IDUNNuX+9Q==", null, false, "7f434309-a4d9-48e9-9ebb-8803db794577", false, "admin@admin.com", "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "InstrumentType",
@@ -276,37 +309,9 @@ namespace Jazzima1.Migrations
                 values: new object[,]
                 {
                     { 3, "Bass" },
-                    { 4, "Drums" },
                     { 1, "Horn" },
-                    { 2, "Piano" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "MusicianAlbum",
-                columns: new[] { "Id", "AlbumId", "MusicianId" },
-                values: new object[,]
-                {
-                    { 12, 3, 13 },
-                    { 19, 4, 15 },
-                    { 18, 4, 6 },
-                    { 17, 4, 14 },
-                    { 16, 3, 4 },
-                    { 15, 1, 4 },
-                    { 14, 2, 5 },
-                    { 13, 1, 5 },
-                    { 11, 3, 12 },
-                    { 6, 2, 7 },
-                    { 9, 2, 10 },
-                    { 8, 2, 9 },
-                    { 7, 2, 8 },
-                    { 20, 4, 16 },
-                    { 5, 2, 6 },
-                    { 4, 1, 3 },
-                    { 3, 3, 2 },
-                    { 2, 1, 2 },
-                    { 1, 1, 1 },
-                    { 10, 3, 11 },
-                    { 21, 4, 17 }
+                    { 2, "Piano" },
+                    { 4, "Drums" }
                 });
 
             migrationBuilder.InsertData(
@@ -314,29 +319,142 @@ namespace Jazzima1.Migrations
                 columns: new[] { "Id", "Instrument", "InstrumentTypeId", "Name" },
                 values: new object[,]
                 {
-                    { 15, "tenor saxophone", 1, "Hank Mobley" },
-                    { 16, "bass", 3, "Doug Watkins" },
-                    { 10, "bass", 3, "Richard Davis" },
-                    { 4, "bass", 3, "Ron Carter" },
-                    { 14, "piano", 2, "Horace Silver" },
-                    { 13, "piano", 2, "McCoy Tyner" },
-                    { 9, "piano", 2, "Andrew Hill" },
-                    { 1, "piano", 2, "Herbie Hancock" },
-                    { 17, "drums", 4, "Art Blakey" },
-                    { 12, "alto saxophone", 1, "James Spaulding" },
-                    { 11, "tenor saxophone", 1, "Wayne Shorter" },
-                    { 8, "tenor saxophone", 1, "Joe Henderson" },
-                    { 7, "alto saxophone", 1, "Eric Dolphy" },
-                    { 6, "trumpet", 1, "Kenny Dorham" },
-                    { 3, "tenor saxophone", 1, "George Coleman" },
-                    { 2, "trumpet", 1, "Freddie Hubbard" },
-                    { 5, "drums", 4, "Tony Williams" }
+                    { 31, "trumpet", 1, "Miles Davis" },
+                    { 37, "alto saxophone", 1, "Jackie McLean" },
+                    { 43, "tenor saxophone", 1, "Stanley Turrentine" },
+                    { 2, "piano", 2, null },
+                    { 5, "piano", 2, "Herbie Hancock" },
+                    { 13, "piano", 2, "Andrew Hill" },
+                    { 17, "piano", 2, "McCoy Tyner" },
+                    { 18, "piano", 2, "Horace Silver" },
+                    { 24, "piano", 2, "Kenny Drew" },
+                    { 28, "piano", 2, "Bobby Timmons" },
+                    { 32, "piano", 2, "Hank Jones" },
+                    { 33, "piano", 2, "Sam Jones" },
+                    { 36, "trumpet", 1, "Donald Byrd" },
+                    { 35, "piano", 2, "Wynton Kelly" },
+                    { 3, "bass", 3, null },
+                    { 8, "bass", 3, "Ron Carter" },
+                    { 14, "bass", 3, "Richard Davis" },
+                    { 20, "bass", 3, "Doug Watkins" },
+                    { 23, "bass", 3, "Paul Chambers" },
+                    { 38, "bass", 3, "Sam Jones" },
+                    { 4, "drums", 4, null },
+                    { 9, "drums", 4, "Tony Williams" },
+                    { 21, "drums", 4, "Art Blakey" },
+                    { 22, "drums", 4, "Philly Joe Jones" },
+                    { 39, "drums", 4, "Art Taylor" },
+                    { 40, "piano", 2, "Walter Davis Jr." },
+                    { 34, "tenor saxophone", 1, "Sonny Rollins" },
+                    { 42, "drums", 4, "Clifford Jarvis" },
+                    { 30, "alto saxophone", 1, "Cannonball Adderley" },
+                    { 41, "drums", 4, "Pete La Roca" },
+                    { 6, "trumpet", 1, "Freddie Hubbard" },
+                    { 7, "tenor saxophone", 1, "George Coleman" },
+                    { 10, "trumpet", 1, "Kenny Dorham" },
+                    { 11, "alto saxophone", 1, "Eric Dolphy" },
+                    { 12, "tenor saxophone", 1, "Joe Henderson" },
+                    { 1, "horns", 1, null },
+                    { 16, "alto saxophone", 1, "James Spaulding" },
+                    { 19, "tenor saxophone", 1, "Hank Mobley" },
+                    { 25, "trombone", 1, "Curtis Fuller" },
+                    { 26, "trumpet", 1, "Lee Morgan" },
+                    { 27, "tenor saxophone", 1, "John Coltrane" },
+                    { 29, "baritone saxophone", 1, "Pepper Adams" },
+                    { 15, "tenor saxophone", 1, "Wayne Shorter" }
                 });
 
             migrationBuilder.InsertData(
                 table: "SavedAlbums",
                 columns: new[] { "Id", "AlbumId", "UserId" },
-                values: new object[] { 1, 1, "00000000-ffff-ffff-ffff-ffffffffffff" });
+                values: new object[,]
+                {
+                    { 2, 2, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 3, 3, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 4, 4, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 5, 5, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 6, 6, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 10, 10, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 8, 8, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 9, 9, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 11, 11, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 12, 12, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 13, 13, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 7, 7, "00000000-ffff-ffff-ffff-ffffffffffff" },
+                    { 1, 1, "00000000-ffff-ffff-ffff-ffffffffffff" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "MusicianAlbum",
+                columns: new[] { "Id", "AlbumId", "MusicianId" },
+                values: new object[,]
+                {
+                    { 2, 1, 6 },
+                    { 35, 7, 32 },
+                    { 36, 7, 33 },
+                    { 39, 8, 35 },
+                    { 45, 9, 35 },
+                    { 63, 13, 35 },
+                    { 50, 10, 40 },
+                    { 53, 11, 40 },
+                    { 15, 1, 8 },
+                    { 16, 3, 8 },
+                    { 9, 2, 14 },
+                    { 20, 4, 20 },
+                    { 40, 8, 20 },
+                    { 26, 5, 23 },
+                    { 31, 6, 23 },
+                    { 51, 10, 23 },
+                    { 64, 13, 23 },
+                    { 46, 9, 38 },
+                    { 56, 11, 38 },
+                    { 60, 12, 38 },
+                    { 13, 1, 9 },
+                    { 14, 2, 9 },
+                    { 21, 4, 21 },
+                    { 37, 7, 21 },
+                    { 27, 5, 22 },
+                    { 32, 6, 22 },
+                    { 41, 8, 22 },
+                    { 47, 9, 39 },
+                    { 57, 11, 39 },
+                    { 65, 13, 39 },
+                    { 30, 6, 28 },
+                    { 52, 10, 41 },
+                    { 24, 5, 24 },
+                    { 59, 12, 17 },
+                    { 3, 3, 6 },
+                    { 58, 12, 6 },
+                    { 4, 1, 7 },
+                    { 5, 2, 10 },
+                    { 18, 4, 10 },
+                    { 6, 2, 11 },
+                    { 7, 2, 12 },
+                    { 10, 3, 15 },
+                    { 11, 3, 16 },
+                    { 19, 4, 19 },
+                    { 23, 5, 25 },
+                    { 25, 5, 26 },
+                    { 28, 6, 26 },
+                    { 22, 5, 27 },
+                    { 29, 6, 29 },
+                    { 44, 9, 29 },
+                    { 33, 7, 30 },
+                    { 34, 7, 31 },
+                    { 38, 8, 34 },
+                    { 42, 9, 36 },
+                    { 49, 10, 36 },
+                    { 54, 11, 36 },
+                    { 43, 9, 37 },
+                    { 48, 10, 37 },
+                    { 55, 11, 37 },
+                    { 62, 13, 43 },
+                    { 1, 1, 5 },
+                    { 8, 2, 13 },
+                    { 12, 3, 17 },
+                    { 17, 4, 18 },
+                    { 61, 12, 42 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -378,9 +496,29 @@ namespace Jazzima1.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Comments_AlbumId",
+                table: "Comments",
+                column: "AlbumId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_ApplicationUserId",
+                table: "Comments",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Musician_InstrumentTypeId",
                 table: "Musician",
                 column: "InstrumentTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MusicianAlbum_AlbumId",
+                table: "MusicianAlbum",
+                column: "AlbumId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MusicianAlbum_MusicianId",
+                table: "MusicianAlbum",
+                column: "MusicianId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SavedAlbums_AlbumId",
@@ -409,9 +547,6 @@ namespace Jazzima1.Migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
-                name: "Musician");
-
-            migrationBuilder.DropTable(
                 name: "MusicianAlbum");
 
             migrationBuilder.DropTable(
@@ -424,10 +559,13 @@ namespace Jazzima1.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "InstrumentType");
+                name: "Musician");
 
             migrationBuilder.DropTable(
                 name: "Album");
+
+            migrationBuilder.DropTable(
+                name: "InstrumentType");
         }
     }
 }

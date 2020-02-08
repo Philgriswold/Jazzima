@@ -39,25 +39,25 @@ namespace Jazzima1.Controllers
             //fourth put return view - lists into corresponding view model
 
             // HORN PLAYERS
-          
+
             var hornPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(1));
 
             List<SelectListItem> hornList = new List<SelectListItem>();
-           foreach (var h in hornPlayerDB)
+            foreach (var h in hornPlayerDB)
             {
                 SelectListItem hornListItem = new SelectListItem
                 {
                     Value = h.Id.ToString(),
                     Text = h.Name
                 };
-                hornList.Add(hornListItem);           
+                hornList.Add(hornListItem);
             }
 
             MAviewModel.HornPlayers = hornList;
 
 
             //PIANO PLAYERS--------------------------------------------------------------------------------
-          
+
             var pianoPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(2));
 
             List<SelectListItem> pianoList = new List<SelectListItem>();
@@ -75,7 +75,7 @@ namespace Jazzima1.Controllers
 
 
             //BASS PLAYERS----------------------------------------------------------------------------------
-          
+
             var bassPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(3));
 
             List<SelectListItem> bassList = new List<SelectListItem>();
@@ -94,7 +94,7 @@ namespace Jazzima1.Controllers
 
 
             //DRUM PLAYERS------------------------------------------------------------------------------------
-           
+
             var drumPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(4));
 
             List<SelectListItem> drumList = new List<SelectListItem>();
@@ -160,7 +160,7 @@ namespace Jazzima1.Controllers
 
             //var user = await GetCurrentUserAsync();
             var AlbumDb = _context.Album;
-           // .FirstOrDefaultAsync(m => m.Id == id);
+            // .FirstOrDefaultAsync(m => m.Id == id);
             return View(MAviewModel);
 
 
@@ -187,7 +187,7 @@ namespace Jazzima1.Controllers
 
             MusicianAlbumViewModel vm = new MusicianAlbumViewModel()
             {
-                
+
                 HornPlayers = new List<SelectListItem>(),
                 PianoPlayers = new List<SelectListItem>(),
                 BassPlayers = new List<SelectListItem>(),
@@ -212,7 +212,7 @@ namespace Jazzima1.Controllers
             {
                 query = query.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.DrumId));
             }
-       
+
             vm.MatchingAlbums = query.ToList();
 
 
