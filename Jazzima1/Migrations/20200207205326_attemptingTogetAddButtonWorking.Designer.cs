@@ -4,14 +4,16 @@ using Jazzima1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200207205326_attemptingTogetAddButtonWorking")]
+    partial class attemptingTogetAddButtonWorking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,48 +90,6 @@ namespace Jazzima1.Migrations
                             Image = "https://upload.wikimedia.org/wikipedia/commons/a/ad/Somethin%E2%80%99_Else.jpg",
                             ReleaseDate = 1958,
                             Title = "Somethin' Else"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/3/32/Newk%27s_Time.jpeg",
-                            ReleaseDate = 1959,
-                            Title = "Newk's Time"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/0/0e/Off_to_the_Races.jpg",
-                            ReleaseDate = 1959,
-                            Title = "Off To The Races"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/7/78/New_Soil.jpg",
-                            ReleaseDate = 1959,
-                            Title = "New Soil"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/f/f1/Davis_Cup_%28album%29.jpg",
-                            ReleaseDate = 1960,
-                            Title = "Davis Cup"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/d/d1/Open_Sesame_%28Freddie_Hubbard_album%29.jpg",
-                            ReleaseDate = 1960,
-                            Title = "Open Sesame"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/9/94/AT%27s_Delight.jpg",
-                            ReleaseDate = 1960,
-                            Title = "A.T's Delight"
                         });
                 });
 
@@ -143,9 +103,6 @@ namespace Jazzima1.Migrations
                     b.Property<int>("AlbumId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
@@ -153,10 +110,6 @@ namespace Jazzima1.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AlbumId");
-
-                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Comments");
                 });
@@ -445,78 +398,8 @@ namespace Jazzima1.Migrations
                         new
                         {
                             Id = 33,
-                            Instrument = "drums",
+                            Instrument = "druma",
                             InstrumentTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Instrument = "tenor saxophone",
-                            InstrumentTypeId = 1,
-                            Name = "Sonny Rollins"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2,
-                            Name = "Wynton Kelly"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Instrument = "trumpet",
-                            InstrumentTypeId = 1,
-                            Name = "Donald Byrd"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Instrument = "alto saxophone",
-                            InstrumentTypeId = 1,
-                            Name = "Jackie McLean"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3,
-                            Name = "Sam Jones"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4,
-                            Name = "Art Taylor"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2,
-                            Name = "Walter Davis Jr."
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4,
-                            Name = "Pete La Roca"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4,
-                            Name = "Clifford Jarvis"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Instrument = "tenor saxophone",
-                            InstrumentTypeId = 1,
-                            Name = "Stanley Turrentine"
                         });
                 });
 
@@ -763,174 +646,6 @@ namespace Jazzima1.Migrations
                             Id = 37,
                             AlbumId = 7,
                             MusicianId = 17
-                        },
-                        new
-                        {
-                            Id = 38,
-                            AlbumId = 8,
-                            MusicianId = 34
-                        },
-                        new
-                        {
-                            Id = 39,
-                            AlbumId = 8,
-                            MusicianId = 35
-                        },
-                        new
-                        {
-                            Id = 40,
-                            AlbumId = 8,
-                            MusicianId = 16
-                        },
-                        new
-                        {
-                            Id = 41,
-                            AlbumId = 8,
-                            MusicianId = 18
-                        },
-                        new
-                        {
-                            Id = 42,
-                            AlbumId = 9,
-                            MusicianId = 36
-                        },
-                        new
-                        {
-                            Id = 43,
-                            AlbumId = 9,
-                            MusicianId = 37
-                        },
-                        new
-                        {
-                            Id = 44,
-                            AlbumId = 9,
-                            MusicianId = 25
-                        },
-                        new
-                        {
-                            Id = 45,
-                            AlbumId = 9,
-                            MusicianId = 35
-                        },
-                        new
-                        {
-                            Id = 46,
-                            AlbumId = 9,
-                            MusicianId = 38
-                        },
-                        new
-                        {
-                            Id = 47,
-                            AlbumId = 9,
-                            MusicianId = 39
-                        },
-                        new
-                        {
-                            Id = 48,
-                            AlbumId = 10,
-                            MusicianId = 37
-                        },
-                        new
-                        {
-                            Id = 49,
-                            AlbumId = 10,
-                            MusicianId = 36
-                        },
-                        new
-                        {
-                            Id = 50,
-                            AlbumId = 10,
-                            MusicianId = 40
-                        },
-                        new
-                        {
-                            Id = 51,
-                            AlbumId = 10,
-                            MusicianId = 19
-                        },
-                        new
-                        {
-                            Id = 52,
-                            AlbumId = 10,
-                            MusicianId = 41
-                        },
-                        new
-                        {
-                            Id = 53,
-                            AlbumId = 11,
-                            MusicianId = 40
-                        },
-                        new
-                        {
-                            Id = 54,
-                            AlbumId = 11,
-                            MusicianId = 36
-                        },
-                        new
-                        {
-                            Id = 55,
-                            AlbumId = 11,
-                            MusicianId = 37
-                        },
-                        new
-                        {
-                            Id = 56,
-                            AlbumId = 11,
-                            MusicianId = 38
-                        },
-                        new
-                        {
-                            Id = 57,
-                            AlbumId = 11,
-                            MusicianId = 39
-                        },
-                        new
-                        {
-                            Id = 58,
-                            AlbumId = 12,
-                            MusicianId = 2
-                        },
-                        new
-                        {
-                            Id = 59,
-                            AlbumId = 12,
-                            MusicianId = 13
-                        },
-                        new
-                        {
-                            Id = 60,
-                            AlbumId = 12,
-                            MusicianId = 38
-                        },
-                        new
-                        {
-                            Id = 61,
-                            AlbumId = 12,
-                            MusicianId = 42
-                        },
-                        new
-                        {
-                            Id = 62,
-                            AlbumId = 13,
-                            MusicianId = 43
-                        },
-                        new
-                        {
-                            Id = 63,
-                            AlbumId = 13,
-                            MusicianId = 35
-                        },
-                        new
-                        {
-                            Id = 64,
-                            AlbumId = 13,
-                            MusicianId = 19
-                        },
-                        new
-                        {
-                            Id = 65,
-                            AlbumId = 13,
-                            MusicianId = 39
                         });
                 });
 
@@ -958,78 +673,6 @@ namespace Jazzima1.Migrations
                         {
                             Id = 1,
                             AlbumId = 1,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AlbumId = 2,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AlbumId = 3,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AlbumId = 4,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            AlbumId = 5,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            AlbumId = 6,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            AlbumId = 7,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            AlbumId = 8,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            AlbumId = 9,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            AlbumId = 10,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            AlbumId = 11,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            AlbumId = 12,
-                            UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            AlbumId = 13,
                             UserId = "00000000-ffff-ffff-ffff-ffffffffffff"
                         });
                 });
@@ -1259,13 +902,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "67a1dd4f-d725-45bf-a45a-eb93f89a025f",
+                            ConcurrencyStamp = "abd75c8d-7b78-4318-84e4-1584b45e9521",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAczlp0cTpKDfPBZFyZpgraUxxZqtby6S7X5rPcHzlBN7zeLZibKi75yDO+Qp5JNtA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAaNdjKLxvYCIJm68Llou62k/kiWjUApeHMsrr7I/N6NKMLGgj0d/U9zl/5Z353NFQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -1273,19 +916,6 @@ namespace Jazzima1.Migrations
                             FirstName = "admin",
                             LastName = "admin"
                         });
-                });
-
-            modelBuilder.Entity("Jazzima1.Models.Comments", b =>
-                {
-                    b.HasOne("Jazzima1.Models.Album", "Album")
-                        .WithMany()
-                        .HasForeignKey("AlbumId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Jazzima1.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("Jazzima1.Models.Musician", b =>

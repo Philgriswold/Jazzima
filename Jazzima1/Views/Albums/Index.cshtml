@@ -10,38 +10,31 @@
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    @*<thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Album.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Album.ReleaseDate)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Album.Image)
             </th>
             <th></th>
         </tr>
-    </thead>
+    </thead>*@
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Album.Title)
+                <img class="img-thumbnail" style="max-width: 150px;" src="@item.Album.Image" alt="" />
+                <form asp-action="Details" asp-route-id="@item.Id" asp-controller="Albums">
+                    <input class="btn btn-success" type="submit" value="Details" />
+                </form>
+                <form asp-action="Delete" asp-route-id="@item.Id">
+                    <input class="btn btn-warning" type="submit" value="Delete" />
+                </form>
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Album.ReleaseDate)
-            </td>
-
-            <td>
-                <img class="img-thumbnail" style="max-width: 150px;" src = "@item.Album.Image" alt="" />
-            </td>
-            <td>
+            @*<td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>

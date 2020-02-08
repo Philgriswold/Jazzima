@@ -55,6 +55,53 @@ namespace Jazzima1.Controllers
             return View();
         }
 
+        // GET: Books/Create
+        //public async Task<IActionResult> Create()
+        //{
+        //    var user = await GetCurrentUserAsync();
+        //    var authors = _context.Author.Where(a => a.ApplicationUserId == user.Id);
+        //    ViewData["AuthorId"] = new SelectList(authors, "Id", "Name");
+        //    return View();
+        //}
+
+        //// POST: Books/Create
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("Id,Title,AuthorId,YearPublished,Rating,ApplicationUserId,Genre")] Book book)
+        //{
+        //    var user = await GetCurrentUserAsync();
+        //    book.ApplicationUserId = user.Id;
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Add(book);
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Name", book.AuthorId);
+        //    return View(book);
+        //}
+
+        //// GET: Books/Edit/5
+        //public async Task<IActionResult> Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var user = await GetCurrentUserAsync();
+
+        //    var book = await _context.Book.FindAsync(id);
+        //    if (book == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    ViewData["AuthorId"] = new SelectList(_context.Author.Where(a => a.ApplicationUserId == user.Id), "Id", "Name", book.AuthorId);
+        //    return View(book);
+        //}
+
         // POST: Albums/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.

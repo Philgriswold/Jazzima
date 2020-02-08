@@ -15,13 +15,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Content)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AlbumId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -29,12 +22,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AlbumId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
