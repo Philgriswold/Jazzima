@@ -12,6 +12,6 @@ namespace Jazzima1.Models
         public int ReleaseDate { get; set; }
         public string Image { get; set; }
         public List<MusicianAlbum> MusicianAlbums { get; set; }
-      
+        public Comments Comments { get; set; }
     }
 }

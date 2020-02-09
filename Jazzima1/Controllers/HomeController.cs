@@ -194,45 +194,53 @@ namespace Jazzima1.Controllers
                 DrumPlayers = new List<SelectListItem>(),
             };
 
+            //if(musicianAlbumViewModel.HornId > 0 && musicianAlbumViewModel.HornPlayers != null || 
+            //    musicianAlbumViewModel.PianoId > 0 && musicianAlbumViewModel.PianoPlayers != null || 
+            //    musicianAlbumViewModel.BassId > 0 && musicianAlbumViewModel.BassPlayers != null ||
+            //    musicianAlbumViewModel.DrumId > 0 && musicianAlbumViewModel.DrumPlayers != null)
+            //{
+            //    //search for
+            //}
+
             var query = _context.Album.Include(m => m.MusicianAlbums).ThenInclude(a => a.Album).AsQueryable();
 
-            if (musicianAlbumViewModel.HornId != null)
+            if (musicianAlbumViewModel.HornId > 0)
             {
                 query = query.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.HornId));
             }
-            if (musicianAlbumViewModel.PianoId != null)
+            if (musicianAlbumViewModel.PianoId > 0)
             {
                 query = query.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.PianoId));
             }
-            if (musicianAlbumViewModel.BassId != null)
+            if (musicianAlbumViewModel.BassId > 0)
             {
                 query = query.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.BassId));
             }
-            if (musicianAlbumViewModel.DrumId != null)
+            if (musicianAlbumViewModel.DrumId > 0)
             {
                 query = query.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.DrumId));
             }
-
+             
             vm.MatchingAlbums = query.ToList();
 
 
             //var query2 = _context.Album.Include(m => m.MusicianAlbums).ThenInclude(a => a.Album).AsQueryable();
 
-            //if (musicianAlbumViewModel.HornId == null)
+            //if (musicianAlbumViewModel.HornId > 0)
             //{
-            //    query2 = query2.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.HornId));
+            //    query2 = null;
             //}
-            //if (musicianAlbumViewModel.PianoId == null)
+            //if (musicianAlbumViewModel.PianoId > 0)
             //{
-            //    query2 = query2.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.PianoId));
+            //    query2 = null;
             //}
-            //if (musicianAlbumViewModel.BassId == null)
+            //if (musicianAlbumViewModel.BassId > 0)
             //{
-            //    query2 = query2.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.BassId));
+            //    query2 = null;
             //}
-            //if (musicianAlbumViewModel.DrumId == null)
+            //if (musicianAlbumViewModel.DrumId > 0)
             //{
-            //    query2 = query2.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.DrumId));
+            //    query2 = null;
             //}
 
             //vm.MatchingAlbums = query2.ToList();

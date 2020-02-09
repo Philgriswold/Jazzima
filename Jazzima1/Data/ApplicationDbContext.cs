@@ -1407,34 +1407,6 @@ namespace Jazzima1.Data
                 UserId = user.Id,
             };
             modelBuilder.Entity<SavedAlbum>().HasData(save10);
-
-
-            SavedAlbum save11 = new SavedAlbum()
-            {
-                Id = 11,
-                AlbumId = 11,
-                UserId = user.Id,
-            };
-            modelBuilder.Entity<SavedAlbum>().HasData(save11);
-
-
-            SavedAlbum save12 = new SavedAlbum()
-            {
-                Id = 12,
-                AlbumId = 12,
-                UserId = user.Id,
-            };
-            modelBuilder.Entity<SavedAlbum>().HasData(save12);
-
-
-            SavedAlbum save13 = new SavedAlbum()
-            {
-                Id = 13,
-                AlbumId = 13,
-                UserId = user.Id,
-            };
-            modelBuilder.Entity<SavedAlbum>().HasData(save13);
-
         }
     }
 }
