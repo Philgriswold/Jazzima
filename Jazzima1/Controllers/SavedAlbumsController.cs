@@ -62,6 +62,8 @@ namespace Jazzima1.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await GetCurrentUserAsync();
+                savedAlbum.UserId = user.Id;
                 _context.Add(savedAlbum);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

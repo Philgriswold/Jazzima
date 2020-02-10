@@ -41,6 +41,8 @@ namespace Jazzima1.Controllers
             var user = await GetCurrentUserAsync();
             var album = await _context.Album
                 .Include(b => b.Comments)
+                .Include(m => m.MusicianAlbums)
+                .ThenInclude(m => m.Musician)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (album == null)

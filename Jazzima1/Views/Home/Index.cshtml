@@ -85,7 +85,7 @@
         <form asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
             <input class="btn btn-success" type="submit" value="Details" />
         </form>
-        <form asp-action="Create" asp-route-id="@album.Id" asp-controller="Albums">
+        <form asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
             <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
         </form>
     }
