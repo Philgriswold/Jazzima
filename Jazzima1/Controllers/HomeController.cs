@@ -43,6 +43,13 @@ namespace Jazzima1.Controllers
             var hornPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(1));
 
             List<SelectListItem> hornList = new List<SelectListItem>();
+            SelectListItem nullHornListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            hornList.Add(nullHornListItem);
             foreach (var h in hornPlayerDB)
             {
                 SelectListItem hornListItem = new SelectListItem
@@ -61,6 +68,14 @@ namespace Jazzima1.Controllers
             var pianoPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(2));
 
             List<SelectListItem> pianoList = new List<SelectListItem>();
+            SelectListItem nullPianoListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            pianoList.Add(nullPianoListItem);
+
             foreach (var p in pianoPlayerDB)
             {
                 SelectListItem pianoListItem = new SelectListItem
@@ -79,6 +94,13 @@ namespace Jazzima1.Controllers
             var bassPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(3));
 
             List<SelectListItem> bassList = new List<SelectListItem>();
+            SelectListItem nullBassListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            bassList.Add(nullBassListItem);
             foreach (var b in bassPlayerDB)
             {
                 SelectListItem bassListItem = new SelectListItem
@@ -98,6 +120,13 @@ namespace Jazzima1.Controllers
             var drumPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(4));
 
             List<SelectListItem> drumList = new List<SelectListItem>();
+            SelectListItem nullDrumListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            drumList.Add(nullDrumListItem);
             foreach (var d in drumPlayerDB)
             {
                 SelectListItem drumListItem = new SelectListItem
@@ -220,7 +249,7 @@ namespace Jazzima1.Controllers
             {
                 query = query.Where(a => a.MusicianAlbums.Any(m => m.MusicianId == musicianAlbumViewModel.DrumId));
             }
-             
+
             vm.MatchingAlbums = query.ToList();
 
 
@@ -253,6 +282,15 @@ namespace Jazzima1.Controllers
             var hornPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(1));
 
             List<SelectListItem> hornList = new List<SelectListItem>();
+
+            SelectListItem nullHornListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            hornList.Add(nullHornListItem);
+
             foreach (var h in hornPlayerDB)
             {
                 SelectListItem hornListItem = new SelectListItem
@@ -271,6 +309,13 @@ namespace Jazzima1.Controllers
             var pianoPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(2));
 
             List<SelectListItem> pianoList = new List<SelectListItem>();
+            SelectListItem nullPianoListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            pianoList.Add(nullPianoListItem);
             foreach (var p in pianoPlayerDB)
             {
                 SelectListItem pianoListItem = new SelectListItem
@@ -289,6 +334,13 @@ namespace Jazzima1.Controllers
             var bassPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(3));
 
             List<SelectListItem> bassList = new List<SelectListItem>();
+            SelectListItem nullBassListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            bassList.Add(nullBassListItem);
             foreach (var b in bassPlayerDB)
             {
                 SelectListItem bassListItem = new SelectListItem
@@ -308,6 +360,13 @@ namespace Jazzima1.Controllers
             var drumPlayerDB = _context.Musician.Where(i => i.InstrumentTypeId.Equals(4));
 
             List<SelectListItem> drumList = new List<SelectListItem>();
+            SelectListItem nullDrumListItem = new SelectListItem
+            {
+                Value = "0",
+                Selected = true,
+                Text = "",
+            };
+            drumList.Add(nullDrumListItem);
             foreach (var d in drumPlayerDB)
             {
                 SelectListItem drumListItem = new SelectListItem

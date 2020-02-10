@@ -276,41 +276,7 @@ namespace Jazzima1.Data
             // CREATING MUSICIANS FOR THE DATABASE
 
 
-            Musician null1 = new Musician()
-            {
-                Id = 1,
-                Name = null,
-                Instrument = "horns",
-                InstrumentTypeId = 1,
-            };
-            modelBuilder.Entity<Musician>().HasData(null1);
-
-            Musician null2 = new Musician()
-            {
-                Id = 2,
-                Name = null,
-                Instrument = "piano",
-                InstrumentTypeId = 2,
-            };
-            modelBuilder.Entity<Musician>().HasData(null2);
-
-            Musician null3 = new Musician()
-            {
-                Id = 3,
-                Name = null,
-                Instrument = "bass",
-                InstrumentTypeId = 3,
-            };
-            modelBuilder.Entity<Musician>().HasData(null3);
-
-            Musician null4 = new Musician()
-            {
-                Id = 4,
-                Name = null,
-                Instrument = "drums",
-                InstrumentTypeId = 4,
-            };
-            modelBuilder.Entity<Musician>().HasData(null4);
+   
 
             Musician herbieHancock = new Musician()
             {
