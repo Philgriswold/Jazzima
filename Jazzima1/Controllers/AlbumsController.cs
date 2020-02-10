@@ -180,8 +180,6 @@ namespace Jazzima1.Controllers
             }
             var user = await GetCurrentUserAsync();
             var album = await _context.SavedAlbums
-                .Where(m => m.AlbumId == id)
-                .Where(a => a.UserId == user.Id)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (album == null)
             {

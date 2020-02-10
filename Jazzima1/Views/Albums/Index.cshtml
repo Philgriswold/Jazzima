@@ -4,11 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="savedalbums">
 
-
-<table class="table">
-    <thead>
+<div class="table">
+    @*<thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Album.Image)
@@ -16,24 +15,25 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody>*@
 @foreach (var item in Model) {
-        <tr>
-            <td class="savedalbums">
+        <div>
+            <a class="album-button-card">
                 <img class="img-thumbnail" style="max-width: 150px;" src="@item.Album.Image" alt="" />
-                <form asp-action="Details" asp-route-id="@item.Id" asp-controller="Albums">
+                <a asp-action="Details" asp-route-id="@item.Id" asp-controller="Albums">
                     <input class="btn btn-success" type="submit" value="Details" />
-                </form>
-                <a asp-controller="Albums" asp-action="Delete" asp-route-id="@item.Id">
+                </a>
+                <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
                     <input class="btn btn-warning" type="submit" value="Delete" />
                 </a>
-            </td>
+           
             @*<td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>*@
-        </tr>
+        </div>
 }
-    </tbody>
-</table>
+    </div>
+</div>
+</div>
