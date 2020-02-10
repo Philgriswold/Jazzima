@@ -27,6 +27,9 @@ namespace Jazzima1.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            //modelBuilder.Entity<SavedAlbum>()
+            //    .HasMany()
+
             // Create a new user for Identity Framework
             ApplicationUser user = new ApplicationUser
             {
@@ -176,6 +179,63 @@ namespace Jazzima1.Data
 
             };
             modelBuilder.Entity<Album>().HasData(atsDelight);
+
+            Album pageOne = new Album()
+            {
+                Id = 14,
+                Title = "Page One",
+                ReleaseDate = 1963,
+                Image = "https://upload.wikimedia.org/wikipedia/en/5/5f/PageOne.jpg"
+
+            };
+            modelBuilder.Entity<Album>().HasData(pageOne);
+
+            Album unaMas = new Album()
+            {
+                Id = 15,
+                Title = "Una Mas",
+                ReleaseDate = 1963,
+                Image = "https://upload.wikimedia.org/wikipedia/en/e/e3/UnaMasDorham.jpg"
+
+            };
+            modelBuilder.Entity<Album>().HasData(unaMas);
+
+            Album theSidewinder = new Album()
+            {
+                Id = 16,
+                Title = "The Sidewinder",
+                ReleaseDate = 1964,
+                Image = "https://upload.wikimedia.org/wikipedia/en/e/e2/Lee_Morgan-The_Sidewinder_%28album_cover%29.jpg"
+            };
+            modelBuilder.Entity<Album>().HasData(theSidewinder);
+
+            Album noRoomForSquares = new Album()
+            {
+                Id = 17,
+                Title = "No Room For Squares",
+                ReleaseDate = 1963,
+                Image = "https://upload.wikimedia.org/wikipedia/en/9/9e/No_Room_for_Squares.jpg"
+            };
+            modelBuilder.Entity<Album>().HasData(noRoomForSquares);
+
+            Album outToLunch = new Album()
+            {
+                Id = 18,
+                Title = "Out To Lunch",
+                ReleaseDate = 1964,
+                Image = "https://upload.wikimedia.org/wikipedia/en/c/cc/Dolphy_Out_To_Lunch.png"
+            };
+            modelBuilder.Entity<Album>().HasData(outToLunch);
+
+            Album theFreedomRider = new Album()
+            {
+                Id = 19,
+                Title = "The Freedom Rider",
+                ReleaseDate = 1964,
+                Image = "https://upload.wikimedia.org/wikipedia/en/a/a3/The_Freedom_Rider.jpg"
+            };
+            modelBuilder.Entity<Album>().HasData(theFreedomRider);
+
 
 
 
@@ -604,6 +664,50 @@ namespace Jazzima1.Data
             };
             modelBuilder.Entity<Musician>().HasData(stanleyTurrentine);
 
+            Musician butchWarren = new Musician()
+            {
+                Id = 44,
+                Name = "Butch Warren",
+                Instrument = "bass",
+                InstrumentTypeId = 3,
+            };
+            modelBuilder.Entity<Musician>().HasData(butchWarren);
+
+            Musician barryHarris = new Musician()
+            {
+                Id = 45,
+                Name = "Barry Harris",
+                Instrument = "piano",
+                InstrumentTypeId = 2,
+            };
+            modelBuilder.Entity<Musician>().HasData(barryHarris);
+
+            Musician bobCranshaw = new Musician()
+            {
+                Id = 46,
+                Name = "Bob Cranshaw",
+                Instrument = "bass",
+                InstrumentTypeId = 3,
+            };
+            modelBuilder.Entity<Musician>().HasData(bobCranshaw);
+
+            Musician billyHiggins = new Musician()
+            {
+                Id = 47,
+                Name = "Billy Higgins",
+                Instrument = "drums",
+                InstrumentTypeId = 4,
+            };
+            modelBuilder.Entity<Musician>().HasData(billyHiggins);
+
+            Musician jymieMerritt = new Musician()
+            {
+                Id = 48,
+                Name = "Jymie Merritt",
+                Instrument = "bass",
+                InstrumentTypeId = 3,
+            };
+            modelBuilder.Entity<Musician>().HasData(jymieMerritt);
 
 
 
@@ -1131,7 +1235,241 @@ namespace Jazzima1.Data
             };
             modelBuilder.Entity<MusicianAlbum>().HasData(artAtsDelight);
 
-       
+            MusicianAlbum joePageOne = new MusicianAlbum()
+            {
+                Id = 66,
+                MusicianId = 12,
+                AlbumId = pageOne.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(joePageOne);
+
+            MusicianAlbum kennyPageOne = new MusicianAlbum()
+            {
+                Id = 67,
+                MusicianId = 10,
+                AlbumId = pageOne.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(kennyPageOne);
+
+            MusicianAlbum mccoyPageOne = new MusicianAlbum()
+            {
+                Id = 68,
+                MusicianId = 17,
+                AlbumId = pageOne.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(mccoyPageOne);
+
+            MusicianAlbum butchPageOne = new MusicianAlbum()
+            {
+                Id = 69,
+                MusicianId = 44,
+                AlbumId = pageOne.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(butchPageOne);
+
+            MusicianAlbum petePageOne = new MusicianAlbum()
+            {
+                Id = 70,
+                MusicianId = 41,
+                AlbumId = pageOne.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(petePageOne);
+
+            MusicianAlbum kennyUnaMas = new MusicianAlbum()
+            {
+                Id = 71,
+                MusicianId = 10,
+                AlbumId = unaMas.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(kennyUnaMas);
+
+            MusicianAlbum joeUnaMas = new MusicianAlbum()
+            {
+                Id = 72,
+                MusicianId = 12,
+                AlbumId = unaMas.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(joeUnaMas);
+
+            MusicianAlbum herbieUnaMas = new MusicianAlbum()
+            {
+                Id = 73,
+                MusicianId = 5,
+                AlbumId = unaMas.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(herbieUnaMas);
+
+            MusicianAlbum butchUnaMas = new MusicianAlbum()
+            {
+                Id = 74,
+                MusicianId = 44,
+                AlbumId = unaMas.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(butchUnaMas);
+
+            MusicianAlbum tonyUnaMas = new MusicianAlbum()
+            {
+                Id = 75,
+                MusicianId = 9,
+                AlbumId = unaMas.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(tonyUnaMas);
+
+            MusicianAlbum leeTheSidewinder = new MusicianAlbum()
+            {
+                Id = 76,
+                MusicianId = 26,
+                AlbumId = theSidewinder.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(leeTheSidewinder);
+
+            MusicianAlbum joeTheSidewinder = new MusicianAlbum()
+            {
+                Id = 77,
+                MusicianId = 12,
+                AlbumId = theSidewinder.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(joeTheSidewinder);
+
+            MusicianAlbum barryTheSidewinder = new MusicianAlbum()
+            {
+                Id = 78,
+                MusicianId = 45,
+                AlbumId = theSidewinder.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(barryTheSidewinder);
+
+            MusicianAlbum bobTheSidewinder = new MusicianAlbum()
+            {
+                Id = 79,
+                MusicianId = 46,
+                AlbumId = theSidewinder.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(bobTheSidewinder);
+
+            MusicianAlbum billyTheSidewinder = new MusicianAlbum()
+            {
+                Id = 80,
+                MusicianId = 47,
+                AlbumId = theSidewinder.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(billyTheSidewinder);
+
+            MusicianAlbum hankNoRoom = new MusicianAlbum()
+            {
+                Id = 81,
+                MusicianId = 19,
+                AlbumId = noRoomForSquares.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(hankNoRoom);
+
+            MusicianAlbum leeNoRoom = new MusicianAlbum()
+            {
+                Id = 82,
+                MusicianId = 26,
+                AlbumId = noRoomForSquares.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(leeNoRoom);
+
+            MusicianAlbum andrewNoRoom = new MusicianAlbum()
+            {
+                Id = 83,
+                MusicianId = 13,
+                AlbumId = noRoomForSquares.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(andrewNoRoom);
+
+            MusicianAlbum butchNoRoom = new MusicianAlbum()
+            {
+                Id = 84,
+                MusicianId = 44,
+                AlbumId = noRoomForSquares.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(butchNoRoom);
+
+            MusicianAlbum phillyJoeNoRoom = new MusicianAlbum()
+            {
+                Id = 85,
+                MusicianId = 22,
+                AlbumId = noRoomForSquares.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(phillyJoeNoRoom);
+
+            MusicianAlbum ericOutToLunch = new MusicianAlbum()
+            {
+                Id = 86,
+                MusicianId = 11,
+                AlbumId = outToLunch.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(ericOutToLunch);
+
+            MusicianAlbum freddieOutToLunch = new MusicianAlbum()
+            {
+                Id = 87,
+                MusicianId = 6,
+                AlbumId = outToLunch.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(freddieOutToLunch);
+
+            MusicianAlbum richardOutToLunch = new MusicianAlbum()
+            {
+                Id = 88,
+                MusicianId = 14,
+                AlbumId = outToLunch.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(richardOutToLunch);
+
+            MusicianAlbum tonyOutToLunch = new MusicianAlbum()
+            {
+                Id = 89,
+                MusicianId = 9,
+                AlbumId = outToLunch.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(tonyOutToLunch);
+
+            MusicianAlbum artTheFreedomRider = new MusicianAlbum()
+            {
+                Id = 90,
+                MusicianId = 21,
+                AlbumId = theFreedomRider.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(artTheFreedomRider);
+
+            MusicianAlbum leeTheFreedomRider = new MusicianAlbum()
+            {
+                Id = 91,
+                MusicianId = 26,
+                AlbumId = theFreedomRider.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(leeTheFreedomRider);
+
+            MusicianAlbum wayneTheFreedomRider = new MusicianAlbum()
+            {
+                Id = 92,
+                MusicianId = 15,
+                AlbumId = theFreedomRider.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(wayneTheFreedomRider);
+
+            MusicianAlbum bobbyTheFreedomRider = new MusicianAlbum()
+            {
+                Id = 93,
+                MusicianId = 28,
+                AlbumId = theFreedomRider.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(bobbyTheFreedomRider);
+
+            MusicianAlbum jymieTheFreedomRider = new MusicianAlbum()
+            {
+                Id = 94,
+                MusicianId = 48,
+                AlbumId = theFreedomRider.Id,
+            };
+            modelBuilder.Entity<MusicianAlbum>().HasData(jymieTheFreedomRider);
+
+
+
+
 
 
 
@@ -1220,34 +1558,6 @@ namespace Jazzima1.Data
                 UserId = user.Id,
             };
             modelBuilder.Entity<SavedAlbum>().HasData(save10);
-
-
-            SavedAlbum save11 = new SavedAlbum()
-            {
-                Id = 11,
-                AlbumId = 11,
-                UserId = user.Id,
-            };
-            modelBuilder.Entity<SavedAlbum>().HasData(save11);
-
-
-            SavedAlbum save12 = new SavedAlbum()
-            {
-                Id = 12,
-                AlbumId = 12,
-                UserId = user.Id,
-            };
-            modelBuilder.Entity<SavedAlbum>().HasData(save12);
-
-
-            SavedAlbum save13 = new SavedAlbum()
-            {
-                Id = 13,
-                AlbumId = 13,
-                UserId = user.Id,
-            };
-            modelBuilder.Entity<SavedAlbum>().HasData(save13);
-
         }
     }
 }

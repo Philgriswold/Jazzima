@@ -10,19 +10,34 @@
     <h4>Album</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ReleaseDate)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ReleaseDate)
         </dd>
-        <dt class = "col-sm-2">
+        @foreach (var item in Model.MusicianAlbums)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(modelitem => item.Musician.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelitem => item.Musician.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(modelitem => item.Musician.Instrument)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelitem => item.Musician.Instrument)
+            </dd>
+        }
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Image)
         </dt>
         <td>
@@ -30,8 +45,25 @@
         </td>
     </dl>
 </div>
+@*<div>
+    <h4>Comments</h4>
+    <dl class="row">
+        @foreach (var item in Model.Comments)
+        {
+            <dt class="col-sm-10">
+                @Html.DisplayNameFor(modelItem => item)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelItem => item)
+            </dd>
+        }
+        </d1>
+</div>*@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Create" asp-route-id="@Model.Id" asp-controller="Comments">Leave A Comment</a>
+    <a asp-action="Create" asp-route-id="@Model.Id" asp-controller="Comments">
+        <input class="btn btn-success" type="submit" value="Add a Comment" />
+    </a>
     <a asp-action="Index">Back to List</a>
 </div>

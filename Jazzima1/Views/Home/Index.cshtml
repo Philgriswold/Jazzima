@@ -9,22 +9,22 @@
 <form asp-action="Index">
 
     <label class="control-label">Horn Players</label>
-    <select asp-for="HornId" class="form-control" asp-items="Model.HornPlayers"></select>
+    <select asp-for="HornId" class="home-form-control" asp-items="Model.HornPlayers"></select>
 
     @*----------------------------------------------------------------*@
 
     <label class="control-label">Pianists</label>
-    <select asp-for="PianoId" class="form-control" asp-items="Model.PianoPlayers"></select>
+    <select asp-for="PianoId" class="home-form-control" asp-items="Model.PianoPlayers"></select>
 
     @*------------------------------------------------------------------------*@
 
     <label class="control-label">Bassists</label>
-    <select asp-for="BassId" class="form-control" asp-items="Model.BassPlayers"></select>
+    <select asp-for="BassId" class="home-form-control" asp-items="Model.BassPlayers"></select>
 
     @*--------------------------------------------------------------------------------*@
 
     <label class="control-label">Drummers</label>
-    <select asp-for="DrumId" class="form-control" asp-items="Model.DrumPlayers"></select>
+    <select asp-for="DrumId" class="home-form-control" asp-items="Model.DrumPlayers"></select>
 
     @*-------------------------------------------------------------------------------------*@
 
@@ -72,7 +72,7 @@
 
 
 
-    <div class="form-group">
+    <div class="submit-form-group">
         <input type="submit" value="Submit" class="btn btn-primary" />
     </div>
 </form>
@@ -85,7 +85,7 @@
         <form asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
             <input class="btn btn-success" type="submit" value="Details" />
         </form>
-        <form asp-action="Create" asp-route-id="@album.Id" asp-controller="Albums">
+        <form asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
             <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
         </form>
     }

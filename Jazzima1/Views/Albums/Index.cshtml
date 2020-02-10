@@ -4,10 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="savedalbums">
 
-
-<table class="table">
+<div class="table">
     @*<thead>
         <tr>
             <th>
@@ -15,25 +14,26 @@
             </th>
             <th></th>
         </tr>
-    </thead>*@
-    <tbody>
+    </thead>
+    <tbody>*@
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <div>
+            <a class="album-button-card">
                 <img class="img-thumbnail" style="max-width: 150px;" src="@item.Album.Image" alt="" />
-                <form asp-action="Details" asp-route-id="@item.Id" asp-controller="Albums">
+                <a asp-action="Details" asp-route-id="@item.Id" asp-controller="Albums">
                     <input class="btn btn-success" type="submit" value="Details" />
-                </form>
-                <form asp-action="Delete" asp-route-id="@item.Id">
+                </a>
+                <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
                     <input class="btn btn-warning" type="submit" value="Delete" />
-                </form>
-            </td>
+                </a>
+           
             @*<td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>*@
-        </tr>
+        </div>
 }
-    </tbody>
-</table>
+    </div>
+</div>
+</div>
