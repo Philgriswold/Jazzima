@@ -151,6 +151,27 @@ namespace Jazzima1.Migrations
                             Image = "https://upload.wikimedia.org/wikipedia/en/e/e2/Lee_Morgan-The_Sidewinder_%28album_cover%29.jpg",
                             ReleaseDate = 1964,
                             Title = "The Sidewinder"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/9/9e/No_Room_for_Squares.jpg",
+                            ReleaseDate = 1963,
+                            Title = "No Room For Squares"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/c/cc/Dolphy_Out_To_Lunch.png",
+                            ReleaseDate = 1964,
+                            Title = "Out To Lunch"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/a/a3/The_Freedom_Rider.jpg",
+                            ReleaseDate = 1964,
+                            Title = "The Freedom Rider"
                         });
                 });
 
@@ -567,6 +588,13 @@ namespace Jazzima1.Migrations
                             Instrument = "drums",
                             InstrumentTypeId = 4,
                             Name = "Billy Higgins"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Instrument = "bass",
+                            InstrumentTypeId = 3,
+                            Name = "Jymie Merritt"
                         });
                 });
 
@@ -1071,6 +1099,90 @@ namespace Jazzima1.Migrations
                             Id = 80,
                             AlbumId = 16,
                             MusicianId = 47
+                        },
+                        new
+                        {
+                            Id = 81,
+                            AlbumId = 17,
+                            MusicianId = 19
+                        },
+                        new
+                        {
+                            Id = 82,
+                            AlbumId = 17,
+                            MusicianId = 26
+                        },
+                        new
+                        {
+                            Id = 83,
+                            AlbumId = 17,
+                            MusicianId = 13
+                        },
+                        new
+                        {
+                            Id = 84,
+                            AlbumId = 17,
+                            MusicianId = 44
+                        },
+                        new
+                        {
+                            Id = 85,
+                            AlbumId = 17,
+                            MusicianId = 22
+                        },
+                        new
+                        {
+                            Id = 86,
+                            AlbumId = 18,
+                            MusicianId = 11
+                        },
+                        new
+                        {
+                            Id = 87,
+                            AlbumId = 18,
+                            MusicianId = 6
+                        },
+                        new
+                        {
+                            Id = 88,
+                            AlbumId = 18,
+                            MusicianId = 14
+                        },
+                        new
+                        {
+                            Id = 89,
+                            AlbumId = 18,
+                            MusicianId = 9
+                        },
+                        new
+                        {
+                            Id = 90,
+                            AlbumId = 19,
+                            MusicianId = 21
+                        },
+                        new
+                        {
+                            Id = 91,
+                            AlbumId = 19,
+                            MusicianId = 26
+                        },
+                        new
+                        {
+                            Id = 92,
+                            AlbumId = 19,
+                            MusicianId = 15
+                        },
+                        new
+                        {
+                            Id = 93,
+                            AlbumId = 19,
+                            MusicianId = 28
+                        },
+                        new
+                        {
+                            Id = 94,
+                            AlbumId = 19,
+                            MusicianId = 48
                         });
                 });
 
@@ -1381,13 +1493,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f5f14daf-baed-4d19-b31b-29e36564e894",
+                            ConcurrencyStamp = "18faa552-57b8-41c4-aff0-b15d4e9de638",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELZSUEa2h6so+CJtRL8z5flES6C8ruPbrtFgPAl2RFZ9wReCDu4GyRQI6mLWD1tSQg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBT+GCl3FKRxOMqXA7O//q5VVh1kR0cfjMFePEVp4KMM67/5Ovv58nZAJyKuB82GQg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,

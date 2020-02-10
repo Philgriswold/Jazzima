@@ -27,6 +27,9 @@ namespace Jazzima1.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            //modelBuilder.Entity<SavedAlbum>()
+            //    .HasMany()
+
             // Create a new user for Identity Framework
             ApplicationUser user = new ApplicationUser
             {

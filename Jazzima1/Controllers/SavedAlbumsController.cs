@@ -150,7 +150,7 @@ namespace Jazzima1.Controllers
             var savedAlbum = await _context.SavedAlbums.FindAsync(id);
             _context.SavedAlbums.Remove(savedAlbum);
             await _context.SaveChangesAsync();
-            return RedirectToAction("/","Albums");
+            return RedirectToAction("Index", "Albums");
         }
 
         private bool SavedAlbumExists(int id)
