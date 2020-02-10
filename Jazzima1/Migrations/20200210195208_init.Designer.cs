@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200210002932_init")]
+    [Migration("20200210195208_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -193,13 +193,9 @@ namespace Jazzima1.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("AlbumId")
-                        .IsUnique();
+                    b.HasIndex("AlbumId");
 
                     b.HasIndex("ApplicationUserId");
 
@@ -266,30 +262,6 @@ namespace Jazzima1.Migrations
                     b.ToTable("Musician");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Instrument = "horns",
-                            InstrumentTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4
-                        },
                         new
                         {
                             Id = 5,
@@ -1495,13 +1467,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "18faa552-57b8-41c4-aff0-b15d4e9de638",
+                            ConcurrencyStamp = "f2490a48-e837-422d-bcb2-f3877a401892",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBT+GCl3FKRxOMqXA7O//q5VVh1kR0cfjMFePEVp4KMM67/5Ovv58nZAJyKuB82GQg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFQc4zMVk31LDrC/6nUJa8H2Y4notSZh9qTnMTb3aZ/x20reondUNs40FboWGsNULg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -1514,8 +1486,8 @@ namespace Jazzima1.Migrations
             modelBuilder.Entity("Jazzima1.Models.Comments", b =>
                 {
                     b.HasOne("Jazzima1.Models.Album", "Album")
-                        .WithOne("Comments")
-                        .HasForeignKey("Jazzima1.Models.Comments", "AlbumId")
+                        .WithMany("Comments")
+                        .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

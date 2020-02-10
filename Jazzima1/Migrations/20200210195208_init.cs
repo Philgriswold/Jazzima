@@ -211,8 +211,7 @@ namespace Jazzima1.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(nullable: true),
                     ApplicationUserId = table.Column<string>(nullable: true),
-                    AlbumId = table.Column<int>(nullable: false),
-                    UserId = table.Column<int>(nullable: false)
+                    AlbumId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -307,7 +306,7 @@ namespace Jazzima1.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "00000000-ffff-ffff-ffff-ffffffffffff", 0, "18faa552-57b8-41c4-aff0-b15d4e9de638", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEBT+GCl3FKRxOMqXA7O//q5VVh1kR0cfjMFePEVp4KMM67/5Ovv58nZAJyKuB82GQg==", null, false, "7f434309-a4d9-48e9-9ebb-8803db794577", false, "admin@admin.com", "admin", "admin" });
+                values: new object[] { "00000000-ffff-ffff-ffff-ffffffffffff", 0, "f2490a48-e837-422d-bcb2-f3877a401892", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", "ADMIN@ADMIN.COM", "AQAAAAEAACcQAAAAEFQc4zMVk31LDrC/6nUJa8H2Y4notSZh9qTnMTb3aZ/x20reondUNs40FboWGsNULg==", null, false, "7f434309-a4d9-48e9-9ebb-8803db794577", false, "admin@admin.com", "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "InstrumentType",
@@ -325,7 +324,7 @@ namespace Jazzima1.Migrations
                 columns: new[] { "Id", "Instrument", "InstrumentTypeId", "Name" },
                 values: new object[,]
                 {
-                    { 43, "tenor saxophone", 1, "Stanley Turrentine" },
+                    { 37, "alto saxophone", 1, "Jackie McLean" },
                     { 13, "piano", 2, "Andrew Hill" },
                     { 17, "piano", 2, "McCoy Tyner" },
                     { 18, "piano", 2, "Horace Silver" },
@@ -336,7 +335,6 @@ namespace Jazzima1.Migrations
                     { 35, "piano", 2, "Wynton Kelly" },
                     { 40, "piano", 2, "Walter Davis Jr." },
                     { 45, "piano", 2, "Barry Harris" },
-                    { 3, "bass", 3, null },
                     { 8, "bass", 3, "Ron Carter" },
                     { 14, "bass", 3, "Richard Davis" },
                     { 20, "bass", 3, "Doug Watkins" },
@@ -345,17 +343,15 @@ namespace Jazzima1.Migrations
                     { 44, "bass", 3, "Butch Warren" },
                     { 46, "bass", 3, "Bob Cranshaw" },
                     { 48, "bass", 3, "Jymie Merritt" },
-                    { 4, "drums", 4, null },
                     { 9, "drums", 4, "Tony Williams" },
                     { 21, "drums", 4, "Art Blakey" },
                     { 22, "drums", 4, "Philly Joe Jones" },
                     { 39, "drums", 4, "Art Taylor" },
                     { 41, "drums", 4, "Pete La Roca" },
                     { 5, "piano", 2, "Herbie Hancock" },
-                    { 2, "piano", 2, null },
+                    { 43, "tenor saxophone", 1, "Stanley Turrentine" },
                     { 47, "drums", 4, "Billy Higgins" },
-                    { 37, "alto saxophone", 1, "Jackie McLean" },
-                    { 1, "horns", 1, null },
+                    { 36, "trumpet", 1, "Donald Byrd" },
                     { 6, "trumpet", 1, "Freddie Hubbard" },
                     { 7, "tenor saxophone", 1, "George Coleman" },
                     { 42, "drums", 4, "Clifford Jarvis" },
@@ -371,7 +367,6 @@ namespace Jazzima1.Migrations
                     { 30, "alto saxophone", 1, "Cannonball Adderley" },
                     { 31, "trumpet", 1, "Miles Davis" },
                     { 34, "tenor saxophone", 1, "Sonny Rollins" },
-                    { 36, "trumpet", 1, "Donald Byrd" },
                     { 19, "tenor saxophone", 1, "Hank Mobley" }
                 });
 
@@ -535,8 +530,7 @@ namespace Jazzima1.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_AlbumId",
                 table: "Comments",
-                column: "AlbumId",
-                unique: true);
+                column: "AlbumId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_ApplicationUserId",
