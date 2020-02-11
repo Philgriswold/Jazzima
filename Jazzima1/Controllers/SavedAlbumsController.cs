@@ -21,12 +21,33 @@ namespace Jazzima1.Controllers
             _context = context;
             _userManager = userManager;
         }
-        // GET: SavedAlbums
+        //GET: SavedAlbums
         public async Task<IActionResult> Index()
+
         {
             var applicationDbContext = _context.SavedAlbums.Include(s => s.Album);
             return View(await applicationDbContext.ToListAsync());
         }
+
+        //public async Task<IActionResult> Index(string searchQuery)
+        //{
+        //    var user = await GetCurrentUserAsync();
+
+        //    if (searchQuery == null)
+        //    {
+        //        return View(await _context.Musician
+
+        //               .ToListAsync());
+        //    }
+        //    else
+        //    {
+        //        //searchQuery = searchQuery;
+        //        return View(await _context.Musician
+        //      .Where(p => p.MusicianAlbums.Equals(searchQuery))
+        //            .ToListAsync());
+        //    }
+        //}
+
 
         // GET: SavedAlbums/Details/5
         public async Task<IActionResult> Details(int? id)
