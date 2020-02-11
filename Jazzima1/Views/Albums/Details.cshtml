@@ -22,6 +22,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ReleaseDate)
         </dd>
+        <div class="name-instrument-list">
         @foreach (var item in Model.MusicianAlbums)
         {
 
@@ -35,6 +36,7 @@
                 @Html.DisplayFor(modelitem => item.Musician.Instrument)
             </dd>
         }
+        </div>
         <td>
             <img class="img-thumbnail" style="max-width: 300px;" src="@Model.Image" alt="" />
         </td>
@@ -43,6 +45,10 @@
          </dt>
         @foreach (var item in Model.Comments)
         {
+            @if (item.ApplicationUser.FirstName != null)
+            {
+                @item.ApplicationUser.FirstName
+            }
         <dd class="col-sm-10">
             @Html.DisplayFor(modelItem => item.Content)
         </dd>
