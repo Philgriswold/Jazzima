@@ -48,6 +48,12 @@ namespace Jazzima1.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+            [Required]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+            [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
@@ -63,14 +69,7 @@ namespace Jazzima1.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            // Example
-            [Required]
-            [Display(Name = "First Name")]
-            public string FirstName { get; set; }
 
-            [Required]
-            [Display(Name = "Last Name")]
-            public string LastName { get; set; }
 
             [Required]
             [Display(Name = "Street Address")]
