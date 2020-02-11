@@ -17,8 +17,8 @@ a {
   justify-content: center;
   align-content: center;
   flex-direction:row;
-  color: white;
-  background-color: white;
+  /*color: white;
+  background-color: white;*/
   border-color: #1861ac;
 }
 
@@ -85,13 +85,13 @@ body {
 .savedalbums {
     display: flex;
     justify-content: space-around;
-    align-content: flex-start;
+    /*align-content: flex-start;*/
     flex-wrap: wrap;
 }
 
 .album-table {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     align-content: space-evenly;
     flex-wrap: wrap;
 }
@@ -105,5 +105,5 @@ body {
 .album-button-card {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    /*align-content: center;*/
 }

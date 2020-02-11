@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200210002932_init")]
-    partial class init
+    [Migration("20200211040708_updatedDB")]
+    partial class updatedDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -174,6 +174,34 @@ namespace Jazzima1.Migrations
                             Image = "https://upload.wikimedia.org/wikipedia/en/a/a3/The_Freedom_Rider.jpg",
                             ReleaseDate = 1964,
                             Title = "The Freedom Rider"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/b/bc/A_Night_in_Tunisia_%281960_album%29.jpg",
+                            ReleaseDate = 1961,
+                            Title = "A Night In Tunisia"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/c/ca/Bluesnik.jpg",
+                            ReleaseDate = 1962,
+                            Title = "Bluesnik"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/2/22/One_Flight_Up.jpg",
+                            ReleaseDate = 1965,
+                            Title = "One Flight Up"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Image = "https://upload.wikimedia.org/wikipedia/en/7/78/The_Thing_to_Do_%28album%29.jpg",
+                            ReleaseDate = 1965,
+                            Title = "The Thing To Do"
                         });
                 });
 
@@ -193,13 +221,9 @@ namespace Jazzima1.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("AlbumId")
-                        .IsUnique();
+                    b.HasIndex("AlbumId");
 
                     b.HasIndex("ApplicationUserId");
 
@@ -266,30 +290,6 @@ namespace Jazzima1.Migrations
                     b.ToTable("Musician");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Instrument = "horns",
-                            InstrumentTypeId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4
-                        },
                         new
                         {
                             Id = 5,
@@ -597,6 +597,55 @@ namespace Jazzima1.Migrations
                             Instrument = "bass",
                             InstrumentTypeId = 3,
                             Name = "Jymie Merritt"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Instrument = "tenor saxophone",
+                            InstrumentTypeId = 1,
+                            Name = "Dexter Gordon"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Instrument = "bass",
+                            InstrumentTypeId = 3,
+                            Name = "Niels-Henning Ørsted Pedersen"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Instrument = "trumpet",
+                            InstrumentTypeId = 1,
+                            Name = "Blue Mitchell"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Instrument = "tenor saxophone",
+                            InstrumentTypeId = 1,
+                            Name = "Junior Cook"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Instrument = "piano",
+                            InstrumentTypeId = 2,
+                            Name = "Chick Corea"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Instrument = "bass",
+                            InstrumentTypeId = 3,
+                            Name = "Gene Taylor"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Instrument = "drums",
+                            InstrumentTypeId = 1,
+                            Name = "Al Foster"
                         });
                 });
 
@@ -1185,6 +1234,126 @@ namespace Jazzima1.Migrations
                             Id = 94,
                             AlbumId = 19,
                             MusicianId = 48
+                        },
+                        new
+                        {
+                            Id = 95,
+                            AlbumId = 20,
+                            MusicianId = 26
+                        },
+                        new
+                        {
+                            Id = 96,
+                            AlbumId = 20,
+                            MusicianId = 15
+                        },
+                        new
+                        {
+                            Id = 97,
+                            AlbumId = 20,
+                            MusicianId = 28
+                        },
+                        new
+                        {
+                            Id = 98,
+                            AlbumId = 20,
+                            MusicianId = 48
+                        },
+                        new
+                        {
+                            Id = 99,
+                            AlbumId = 20,
+                            MusicianId = 21
+                        },
+                        new
+                        {
+                            Id = 100,
+                            AlbumId = 21,
+                            MusicianId = 37
+                        },
+                        new
+                        {
+                            Id = 101,
+                            AlbumId = 21,
+                            MusicianId = 6
+                        },
+                        new
+                        {
+                            Id = 102,
+                            AlbumId = 21,
+                            MusicianId = 24
+                        },
+                        new
+                        {
+                            Id = 103,
+                            AlbumId = 21,
+                            MusicianId = 20
+                        },
+                        new
+                        {
+                            Id = 104,
+                            AlbumId = 21,
+                            MusicianId = 41
+                        },
+                        new
+                        {
+                            Id = 105,
+                            AlbumId = 22,
+                            MusicianId = 49
+                        },
+                        new
+                        {
+                            Id = 106,
+                            AlbumId = 22,
+                            MusicianId = 36
+                        },
+                        new
+                        {
+                            Id = 107,
+                            AlbumId = 22,
+                            MusicianId = 24
+                        },
+                        new
+                        {
+                            Id = 108,
+                            AlbumId = 22,
+                            MusicianId = 50
+                        },
+                        new
+                        {
+                            Id = 109,
+                            AlbumId = 22,
+                            MusicianId = 39
+                        },
+                        new
+                        {
+                            Id = 110,
+                            AlbumId = 23,
+                            MusicianId = 51
+                        },
+                        new
+                        {
+                            Id = 111,
+                            AlbumId = 23,
+                            MusicianId = 52
+                        },
+                        new
+                        {
+                            Id = 112,
+                            AlbumId = 23,
+                            MusicianId = 53
+                        },
+                        new
+                        {
+                            Id = 113,
+                            AlbumId = 23,
+                            MusicianId = 54
+                        },
+                        new
+                        {
+                            Id = 114,
+                            AlbumId = 23,
+                            MusicianId = 55
                         });
                 });
 
@@ -1495,13 +1664,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "18faa552-57b8-41c4-aff0-b15d4e9de638",
+                            ConcurrencyStamp = "32681c1c-2f00-409f-9a5f-e3842e5c9bc4",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBT+GCl3FKRxOMqXA7O//q5VVh1kR0cfjMFePEVp4KMM67/5Ovv58nZAJyKuB82GQg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEP2UsJP+WIWf/5ZthhB91AFwTM9NDY/hofvGucXJEMrCJHbcp+uKLjpkF6timl+HUw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,
@@ -1514,8 +1683,8 @@ namespace Jazzima1.Migrations
             modelBuilder.Entity("Jazzima1.Models.Comments", b =>
                 {
                     b.HasOne("Jazzima1.Models.Album", "Album")
-                        .WithOne("Comments")
-                        .HasForeignKey("Jazzima1.Models.Comments", "AlbumId")
+                        .WithMany("Comments")
+                        .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -79,7 +79,7 @@ namespace Jazzima1.Controllers
         [HttpPost("comments/Create/{id}")]
         [ValidateAntiForgeryToken]
         // this creates a comment with an id and also has what it will be displaying which is the text area of the comment
-        public async Task<IActionResult> Create(int id, [Bind("Text")] Comments comments)
+        public async Task<IActionResult> Create(int id, [Bind("Content")] Comments comments)
         {
             comments.AlbumId = id;
             var user = await GetCurrentUserAsync();
@@ -89,7 +89,7 @@ namespace Jazzima1.Controllers
             {
                 _context.Add(comments);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Album));
+                return RedirectToAction("Details", "Albums", new { id = id });
                 //return RedirectToAction(nameof(Index));
             }
             ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id", comments.AlbumId);

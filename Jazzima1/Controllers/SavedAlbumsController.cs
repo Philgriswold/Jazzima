@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Jazzima1.Data;
 using Jazzima1.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Jazzima1.Controllers
 {
@@ -56,6 +57,7 @@ namespace Jazzima1.Controllers
         // POST: SavedAlbums/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize] 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,AlbumId,UserId")] SavedAlbum savedAlbum)
@@ -63,10 +65,12 @@ namespace Jazzima1.Controllers
             if (ModelState.IsValid)
             {
                 var user = await GetCurrentUserAsync();
+                savedAlbum.AlbumId = savedAlbum.Id;
+                savedAlbum.Id = 0;
                 savedAlbum.UserId = user.Id;
                 _context.Add(savedAlbum);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id", savedAlbum.AlbumId);
             return View(savedAlbum);

@@ -4,14 +4,16 @@ using Jazzima1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200210195208_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -172,34 +174,6 @@ namespace Jazzima1.Migrations
                             Image = "https://upload.wikimedia.org/wikipedia/en/a/a3/The_Freedom_Rider.jpg",
                             ReleaseDate = 1964,
                             Title = "The Freedom Rider"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/b/bc/A_Night_in_Tunisia_%281960_album%29.jpg",
-                            ReleaseDate = 1961,
-                            Title = "A Night In Tunisia"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/c/ca/Bluesnik.jpg",
-                            ReleaseDate = 1962,
-                            Title = "Bluesnik"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/2/22/One_Flight_Up.jpg",
-                            ReleaseDate = 1965,
-                            Title = "One Flight Up"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Image = "https://upload.wikimedia.org/wikipedia/en/7/78/The_Thing_to_Do_%28album%29.jpg",
-                            ReleaseDate = 1965,
-                            Title = "The Thing To Do"
                         });
                 });
 
@@ -595,55 +569,6 @@ namespace Jazzima1.Migrations
                             Instrument = "bass",
                             InstrumentTypeId = 3,
                             Name = "Jymie Merritt"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Instrument = "tenor saxophone",
-                            InstrumentTypeId = 1,
-                            Name = "Dexter Gordon"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3,
-                            Name = "Niels-Henning Ørsted Pedersen"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            Instrument = "trumpet",
-                            InstrumentTypeId = 1,
-                            Name = "Blue Mitchell"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            Instrument = "tenor saxophone",
-                            InstrumentTypeId = 1,
-                            Name = "Junior Cook"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            Instrument = "piano",
-                            InstrumentTypeId = 2,
-                            Name = "Chick Corea"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            Instrument = "bass",
-                            InstrumentTypeId = 3,
-                            Name = "Gene Taylor"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            Instrument = "drums",
-                            InstrumentTypeId = 4,
-                            Name = "Al Foster"
                         });
                 });
 
@@ -1232,126 +1157,6 @@ namespace Jazzima1.Migrations
                             Id = 94,
                             AlbumId = 19,
                             MusicianId = 48
-                        },
-                        new
-                        {
-                            Id = 95,
-                            AlbumId = 20,
-                            MusicianId = 26
-                        },
-                        new
-                        {
-                            Id = 96,
-                            AlbumId = 20,
-                            MusicianId = 15
-                        },
-                        new
-                        {
-                            Id = 97,
-                            AlbumId = 20,
-                            MusicianId = 28
-                        },
-                        new
-                        {
-                            Id = 98,
-                            AlbumId = 20,
-                            MusicianId = 48
-                        },
-                        new
-                        {
-                            Id = 99,
-                            AlbumId = 20,
-                            MusicianId = 21
-                        },
-                        new
-                        {
-                            Id = 100,
-                            AlbumId = 21,
-                            MusicianId = 37
-                        },
-                        new
-                        {
-                            Id = 101,
-                            AlbumId = 21,
-                            MusicianId = 6
-                        },
-                        new
-                        {
-                            Id = 102,
-                            AlbumId = 21,
-                            MusicianId = 24
-                        },
-                        new
-                        {
-                            Id = 103,
-                            AlbumId = 21,
-                            MusicianId = 20
-                        },
-                        new
-                        {
-                            Id = 104,
-                            AlbumId = 21,
-                            MusicianId = 41
-                        },
-                        new
-                        {
-                            Id = 105,
-                            AlbumId = 22,
-                            MusicianId = 49
-                        },
-                        new
-                        {
-                            Id = 106,
-                            AlbumId = 22,
-                            MusicianId = 36
-                        },
-                        new
-                        {
-                            Id = 107,
-                            AlbumId = 22,
-                            MusicianId = 24
-                        },
-                        new
-                        {
-                            Id = 108,
-                            AlbumId = 22,
-                            MusicianId = 50
-                        },
-                        new
-                        {
-                            Id = 109,
-                            AlbumId = 22,
-                            MusicianId = 39
-                        },
-                        new
-                        {
-                            Id = 110,
-                            AlbumId = 23,
-                            MusicianId = 51
-                        },
-                        new
-                        {
-                            Id = 111,
-                            AlbumId = 23,
-                            MusicianId = 52
-                        },
-                        new
-                        {
-                            Id = 112,
-                            AlbumId = 23,
-                            MusicianId = 53
-                        },
-                        new
-                        {
-                            Id = 113,
-                            AlbumId = 23,
-                            MusicianId = 54
-                        },
-                        new
-                        {
-                            Id = 114,
-                            AlbumId = 23,
-                            MusicianId = 55
                         });
                 });
 
@@ -1662,13 +1467,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "877060a1-d72f-428e-8c57-8df40ed2bfeb",
+                            ConcurrencyStamp = "f2490a48-e837-422d-bcb2-f3877a401892",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBydwnWIyS5oMVBM1eTT2ulsUShKQWdrKi+TbMYrFEsRoitP/wl9zOvt5xOiLTyaBA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFQc4zMVk31LDrC/6nUJa8H2Y4notSZh9qTnMTb3aZ/x20reondUNs40FboWGsNULg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,

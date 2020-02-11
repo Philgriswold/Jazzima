@@ -13,6 +13,5 @@ namespace Jazzima1.Models
         public ApplicationUser ApplicationUser { get; set; }
         public int AlbumId { get; set; }
         public Album Album { get; set; }
-        public int UserId { get; set; }
     }
 }
