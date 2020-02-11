@@ -73,13 +73,15 @@
 
 
     <div class="submit-form-group">
-        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input type="submit" value="Submit" class="btn btn-prim ary" />
     </div>
 </form>
+<div class="home-album-list">
 @if (Model.MatchingAlbums != null)
 {
     @foreach (var album in Model.MatchingAlbums)
     {
+        <div class="home-album-card">
         <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
 
         <form asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
@@ -88,7 +90,9 @@
         <form asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
             <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
         </form>
+        </div>
     }
 
 }
+</div>
 
