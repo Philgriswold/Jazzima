@@ -43,7 +43,7 @@ namespace Jazzima1.Controllers
                 .Include(b => b.Comments)
                 .Include(m => m.MusicianAlbums)
                 .ThenInclude(m => m.Musician)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(a => a.Id == id);
 
             if (album == null)
             {
