@@ -144,7 +144,7 @@ namespace Jazzima1.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Albums", new { id = id });
             }
             ViewData["ApplicationUserId"] = new SelectList(_context.ApplicationUser, "Id", "Id", comments.ApplicationUserId);
             ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id", comments.AlbumId);
