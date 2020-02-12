@@ -58,7 +58,7 @@
     </dl>
 </div>
 
-@*<div>
+<div>
 
         <h4>Comments</h4>
 
@@ -84,7 +84,7 @@
 
             </d1>
 
-    </div>*@
+    </div>
 
 <div>
     <a asp-action="Create" asp-route-id="@Model.Id" asp-controller="Comments">
@@ -95,3 +95,38 @@
     </a>
     <a asp-action="Index">Back to List</a>
 </div>
+
+@*<div class="card mb-3" style="max-width: 840px;">
+  <div class="row no-gutters">
+      <div class="col-md-4">
+          <div>
+          <img class="img-thumbnail" style="max-width: 300px;" src="@Model.Image" alt="an album picture" />
+          </div>
+      </div>
+    <div class="col-md-8">
+      <div class="card-body">
+          <h5 class="card-title"> @Html.DisplayFor(model => model.Title)</h5>
+          <p class="card-text">
+              <div>
+                  @Html.DisplayNameFor(model => model.ReleaseDate)
+              </div>
+              <div>
+                  @Html.DisplayFor(model => model.ReleaseDate)
+              </div>
+              <p>
+              @foreach (var item in Model.MusicianAlbums)
+              {
+                  <dd class="col-sm-10">
+                      <strong>
+                          @Html.DisplayFor(modelitem => item.Musician.Name)
+                      </strong>
+                  </dd>
+                  <dd class="col-sm-10">
+                      @Html.DisplayFor(modelitem => item.Musician.Instrument)
+                  </dd>
+              }
+                </p>
+          </p>
+      </div>
+    </div>
+</div>*@

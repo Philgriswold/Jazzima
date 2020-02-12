@@ -167,6 +167,7 @@ C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Details.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Edit.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Comments\Index.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Musicians\Create.cshtml.g.cs
@@ -174,6 +175,11 @@ C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Musicians\Details.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Musicians\Edit.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Musicians\Index.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Create.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Delete.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Details.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Edit.cshtml.g.cs
+C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Index.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -186,10 +192,3 @@ C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Ja
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.csproj.CopyComplete
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.dll
 C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.pdb
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Jazzima1.csprojAssemblyReference.cache
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Create.cshtml.g.cs
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Delete.cshtml.g.cs
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Details.cshtml.g.cs
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Edit.cshtml.g.cs
-C:\Users\Phil Griswold\source\repos\Jazzima1\Jazzima1\obj\Debug\netcoreapp3.1\Razor\Views\SavedAlbums\Index.cshtml.g.cs

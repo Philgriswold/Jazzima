@@ -76,3 +76,13 @@ a {
     display: flex;
     justify-content: flex-end;
 }
+
+.card-deck {
+    padding: 10px;
+    margin: 10px;
+}
+
+.card {
+    padding: 10px;
+    margin: 10px;
+}

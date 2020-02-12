@@ -8,22 +8,22 @@
 
 <form asp-action="Index">
 
-    <label class="control-label">Horn Players</label>
+    <label class="control-label">Horns</label>
     <select asp-for="HornId" class="home-form-control" asp-items="Model.HornPlayers"></select>
 
     @*----------------------------------------------------------------*@
 
-    <label class="control-label">Pianists</label>
+    <label class="control-label">Piano</label>
     <select asp-for="PianoId" class="home-form-control" asp-items="Model.PianoPlayers"></select>
 
     @*------------------------------------------------------------------------*@
 
-    <label class="control-label">Bassists</label>
+    <label class="control-label">Bass</label>
     <select asp-for="BassId" class="home-form-control" asp-items="Model.BassPlayers"></select>
 
     @*--------------------------------------------------------------------------------*@
 
-    <label class="control-label">Drummers</label>
+    <label class="control-label">Drums</label>
     <select asp-for="DrumId" class="home-form-control" asp-items="Model.DrumPlayers"></select>
 
     @*-------------------------------------------------------------------------------------*@
@@ -83,7 +83,7 @@
     {
         @foreach (var album in Model.MatchingAlbums)
         {
-            <div class="card text-center" style="width: 18rem;">
+            <div class="card text-center" style="width: 12rem;">
                 <div class="home-album-card">
                     <h5 class="card-title">
                         <div class="card-body">
