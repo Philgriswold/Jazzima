@@ -21,12 +21,79 @@ namespace Jazzima1.Controllers
             _context = context;
             _userManager = userManager;
         }
-        // GET: SavedAlbums
-        public async Task<IActionResult> Index()
+        //GET: SavedAlbums
+        //public async Task<IActionResult> Index()
+
+        //{
+        //    var applicationDbContext = _context.SavedAlbums.Include(s => s.Album);
+        //    return View(await applicationDbContext.ToListAsync());
+        //}
+
+    
+        public async Task<IActionResult> Index(string searchQuery)
         {
-            var applicationDbContext = _context.SavedAlbums.Include(s => s.Album);
-            return View(await applicationDbContext.ToListAsync());
+            var user = await GetCurrentUserAsync();
+
+            if (searchQuery == null)
+            {
+                return View(await _context.Album
+
+                       .ToListAsync());
+            }
+            else
+            {
+                //var musicianAlbums = await _context.Musician.Include(m => m.MusicianAlbums)
+                //.Where(m => m.Name.Equals(searchQuery)).FirstOrDefaultAsync();
+                //     .ToListAsync();
+
+
+                // .ThenInclude(m => m.Album.MusicianAlbums.Musician)
+
+                // var savedAlbum = _context.SavedAlbums
+                //.Include(s => s.Album)
+                //.Include(a => a.Album.MusicianAlbums)
+                //.ThenInclude(m => m.Album.MusicianAlbums)
+                //.ThenInclude(x => x.Musician)
+                //.Where(n => n.Album.MusicianAlbums.Select(x => x.Musician == musicianAlbums));
+
+                //searchQuery = searchQuery;
+                //var musician = await _context.Musician
+
+                //var albums = _context.Album
+                //.Include(a => a.MusicianAlbums);
+
+                //var albumList = foreach (x = x.album
+
+                var AlbumDb = await _context.SavedAlbums.Where(a => a.UserId == user.Id)
+                    .Include(c => c.Album).ToListAsync();
+
+
+
+
+                var musicanAlbums = await _context.MusicianAlbum.Where(m => m.Musician.Name.Equals(searchQuery)).ToListAsync();
+
+                List<Album> albumList = new List<Album>();
+
+                //var albums = AlbumDb.Select(x => x.AlbumId == (musicanAlbums.S))
+
+                for (var i = 0; i <= AlbumDb.Count(); i++)
+                {
+                    for (var o = 0; o <= musicanAlbums.Count(); o++)
+                    {
+                        if (AlbumDb[i].Album == musicanAlbums[o].Album)
+                        {
+                            albumList.Add(AlbumDb[i].Album);
+                        } 
+                    }
+                }
+
+
+
+                return View(albumList)
+              ;
+            }
         }
+
 
         // GET: SavedAlbums/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -48,16 +115,16 @@ namespace Jazzima1.Controllers
         }
 
         // GET: SavedAlbums/Create
-        public IActionResult Create()
-        {
-            ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id");
-            return View();
-        }
+        //public IActionResult Create()
+        //{
+        //    ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id");
+        //    return View();
+        //}
 
         // POST: SavedAlbums/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize] 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,AlbumId,UserId")] SavedAlbum savedAlbum)

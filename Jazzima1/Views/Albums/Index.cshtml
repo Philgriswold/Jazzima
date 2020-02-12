@@ -4,30 +4,72 @@
     ViewData["Title"] = "Index";
 }
 
+<div class="text-center"
+<form asp-action="Index" asp-controller="Albums" method="get">
+    <label>Search by Musician: </label>
+    <input name="searchQuery" type="text" />
+    <input class="btn btn-success" type="submit" value="Search" />
+</form>
+</div>
+
 <div class="savedalbums">
 
-<div class="table">
-    @*<thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Album.Image)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>*@
-@foreach (var item in Model) {
-        <div class="album-button-card">
-            <a>
-                <img class="img-thumbnail" style="max-width: 150px;" src="@item.Album.Image" alt="" />
-                <a asp-action="Details" asp-route-id="@item.AlbumId" asp-controller="Albums">
-                    <input class="btn btn-success" type="submit" value="Details" />
-                </a>
-                <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
-                    <input class="btn btn-warning" type="submit" value="Delete" />
-                </a>
+    <div class="container">
+        @*<thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Album.Image)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>*@
+
+        @*PART2
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="album-button-card">
+                    <a>
+                        <img class="img-thumbnail" style="max-width: 150px;" src="@item.Album.Image" alt="" />
+                        <a asp-action="Details" asp-route-id="@item.AlbumId" asp-controller="Albums">
+                            <input class="btn btn-success" type="submit" value="Details" />
+                        </a>
+                        <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
+                            <input class="btn btn-warning" type="submit" value="Delete" />
+                        </a>
+                </div>
+            }
         </div>
-}
     </div>
 </div>
-</div>
+</div>*@
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="card-group">
+                    <div class="card">
+                        <img src="@item.Album.Image" style="max-width: 150px;" class="card-img-top" alt="album picture">
+                        <div class="text-center">
+                        <a asp-action="Details" asp-route-id="@item.AlbumId" asp-controller="Albums">
+                            <input class="btn btn-dark" type="submit" value="Details" />
+                        </a>
+                        <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
+                            <input class="btn btn-outline-dark" type="submit" value="Delete" />
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                }
+        </div>
+
+
+
+                @*<div class="col">col</div>
+            <div class="col">col</div>
+            <div class="w-100"></div>
+            <div class="col">col</div>
+            <div class="col">col</div>*@
+
