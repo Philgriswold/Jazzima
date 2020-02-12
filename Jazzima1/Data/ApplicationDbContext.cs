@@ -721,7 +721,7 @@ namespace Jazzima1.Data
             Musician nielsHenningØrstedPedersen = new Musician()
             {
                 Id = 50,
-                Name = "Niels-Henning Ørsted Pedersen",
+                Name = "Niels Henning",
                 Instrument = "bass",
                 InstrumentTypeId = 3,
             };

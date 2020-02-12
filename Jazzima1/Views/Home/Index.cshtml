@@ -4,78 +4,95 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Index</h1>
+<div class="jazzima-home">
+    <form asp-action="Index">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="https://i.pinimg.com/originals/b7/23/94/b7239463be76f401ceb0d42514148762.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <label class="control-label">Horns</label>
+                    <select asp-for="HornId" class="home-form-control" asp-items="Model.HornPlayers"></select>
+                </div>
 
-<form asp-action="Index">
+                @*----------------------------------------------------------------*@
+                <div class="col">
+                    <img src="https://media.newyorker.com/photos/5d796c91a5350d0008a142dc/master/pass/brody-bluenote.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <label class="control-label">Piano</label>
+                    <select asp-for="PianoId" class="home-form-control" asp-items="Model.PianoPlayers"></select>
+                </div>
 
-    <label class="control-label">Horns</label>
-    <select asp-for="HornId" class="home-form-control" asp-items="Model.HornPlayers"></select>
+                @*------------------------------------------------------------------------*@
+                <div class="col">
+                    <img src="https://www.morrisonhotelgallery.com/images/big/WCHAMP16.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <label class="control-label">Bass</label>
+                    <select asp-for="BassId" class="home-form-control" asp-items="Model.BassPlayers"></select>
+                </div>
 
-    @*----------------------------------------------------------------*@
+                @*--------------------------------------------------------------------------------*@
+                <div class="col">
 
-    <label class="control-label">Piano</label>
-    <select asp-for="PianoId" class="home-form-control" asp-items="Model.PianoPlayers"></select>
+                    <img src="https://i.pinimg.com/originals/b6/b8/0b/b6b80b704420f01bc01cb5706a0ce46f.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <label class="control-label">Drums</label>
+                    <select asp-for="DrumId" class="home-form-control" asp-items="Model.DrumPlayers"></select>
+                </div>
+                @*-------------------------------------------------------------------------------------*@
 
-    @*------------------------------------------------------------------------*@
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="submit-form-group">
+                <input type="submit" value="Submit" class="btn btn-prim ary" />
+            </div>
+        </div>
 
-    <label class="control-label">Bass</label>
-    <select asp-for="BassId" class="home-form-control" asp-items="Model.BassPlayers"></select>
-
-    @*--------------------------------------------------------------------------------*@
-
-    <label class="control-label">Drums</label>
-    <select asp-for="DrumId" class="home-form-control" asp-items="Model.DrumPlayers"></select>
-
-    @*-------------------------------------------------------------------------------------*@
-
-    @*<tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ReleaseDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Image)
-                </th>
-                <th></th>
-            </tr>
-            </thead>
-        <tbody>*@
-
-    @*@foreach (var item in Model.MatchingAlbums)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Image)
-                </td>*@
-    @*<div class="form-group">
-            <label asp-for="HornId" class="control-label"></label>
-            <select asp-for="HornId" class="form-control" asp-items="ViewBag.HornPlayers"></select>
-            <span asp-validation-for="HornId" class="text-danger"></span>
-        </div>*@
-    @*<td>
-            <img class="img-thumbnail" style="max-width: 150px;" src="@item.Image" alt="" />
-        </td>
-        <td>
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-        </td>*@
+    </form>
+</div>
 
 
 
 
-    <div class="submit-form-group">
-        <input type="submit" value="Submit" class="btn btn-prim ary" />
-    </div>
-</form>
+
+@*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+    <tbody>*@
+
+@*@foreach (var item in Model.MatchingAlbums)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>*@
+@*<div class="form-group">
+        <label asp-for="HornId" class="control-label"></label>
+        <select asp-for="HornId" class="form-control" asp-items="ViewBag.HornPlayers"></select>
+        <span asp-validation-for="HornId" class="text-danger"></span>
+    </div>*@
+@*<td>
+        <img class="img-thumbnail" style="max-width: 150px;" src="@item.Image" alt="" />
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+    </td>*@
+
 @*<div class="home-album-list">
 
 
@@ -106,31 +123,33 @@
     </div>
     </div>*@
 
-<div class="home-album-list">
+<div class="container">
+    <div class="row">
 
 
-    @if (Model.MatchingAlbums != null)
-    {
-        @foreach (var album in Model.MatchingAlbums)
+        @if (Model.MatchingAlbums != null)
         {
-            <div class="card-group">
-                <div class="card">
-                    <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
-                    <div class="text-center">
-                        <a asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
-                            <input class="btn btn-success" type="submit" value="Details" />
-                        </a>
-                        <a asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
-                            <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
-                        </a>
+            @foreach (var album in Model.MatchingAlbums)
+            {
+                <div class="card-group">
+                    <div class="card">
+                        <div class="text-center">
+                            <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
+                        </div>
+                        <div class="text-center">
+                            <a asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
+                                <input class="btn btn-success" type="submit" value="Details" />
+                            </a>
+                            <a asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
+                                <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
+                            </a>
+                        </div>
                     </div>
-               </div>
-          </div>
+                </div>
+            }
         }
-    }
-
+    </div>
 </div>
-
 
 
 

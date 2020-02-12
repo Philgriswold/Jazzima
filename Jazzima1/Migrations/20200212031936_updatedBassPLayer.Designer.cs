@@ -4,14 +4,16 @@ using Jazzima1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Jazzima1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200212031936_updatedBassPLayer")]
+    partial class updatedBassPLayer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -608,7 +610,7 @@ namespace Jazzima1.Migrations
                             Id = 50,
                             Instrument = "bass",
                             InstrumentTypeId = 3,
-                            Name = "Niels Henning"
+                            Name = "Niels-Henning Ørsted"
                         },
                         new
                         {
@@ -1662,13 +1664,13 @@ namespace Jazzima1.Migrations
                         {
                             Id = "00000000-ffff-ffff-ffff-ffffffffffff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4174181c-8f38-414b-a0cf-bc070a318d44",
+                            ConcurrencyStamp = "cbd56e8b-d9e3-4ff7-bc9a-a74b4f712f21",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
                             NormalizedUserName = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAcdtyYF2RLUgfkSCmkVttRW6NgqL2JnDZCr395yFjlQwpViwCWsVFp1hYaI1by3hg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMYHWhd1JZMIQ86JZBWGzL9gmNklADO/IAN4MUAuP07i6rYJUjnPVqsPqV7aKOzcGg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7f434309-a4d9-48e9-9ebb-8803db794577",
                             TwoFactorEnabled = false,

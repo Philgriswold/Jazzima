@@ -12,6 +12,11 @@ a {
   color: #0366d6;
 }
 
+.jazzima-home {
+    color: black;
+    background-color: black;
+}
+
 .btn-primary {
     color: #fff;
     background-color: blue;
@@ -19,8 +24,8 @@ a {
     justify-content: center;
     align-content: center;
     flex-direction: row;
-    color: forestgreen;
-    background-color: forestgreen;
+    /*color: forestgreen;
+    background-color: forestgreen;*/
     border-color: #1861ac;
 }
 
