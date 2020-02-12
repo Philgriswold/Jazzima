@@ -4,26 +4,34 @@
     ViewData["Title"] = "Home Page";
 }
 
+
+<div class="text-center">
+
+    <h1 class="display-4">Jazzima</h1>
+
+
+</div>
+
 <div class="jazzima-home">
     <form asp-action="Index">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <img src="https://i.pinimg.com/originals/b7/23/94/b7239463be76f401ceb0d42514148762.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <img src="https://cdn.washingtoncitypaper.com/files/base/scomm/wcp/image/2014/05/960w/blogs_artsdesk_files_2014_05_dexter.jpg" style="max-width: 550px;" class="card-img-top" alt="album picture">
                     <label class="control-label">Horns</label>
                     <select asp-for="HornId" class="home-form-control" asp-items="Model.HornPlayers"></select>
                 </div>
 
                 @*----------------------------------------------------------------*@
                 <div class="col">
-                    <img src="https://media.newyorker.com/photos/5d796c91a5350d0008a142dc/master/pass/brody-bluenote.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <img src="https://media.newyorker.com/photos/5d796c91a5350d0008a142dc/master/pass/brody-bluenote.jpg" style="max-width: 550px;" class="card-img-top" alt="album picture">
                     <label class="control-label">Piano</label>
                     <select asp-for="PianoId" class="home-form-control" asp-items="Model.PianoPlayers"></select>
                 </div>
 
                 @*------------------------------------------------------------------------*@
                 <div class="col">
-                    <img src="https://www.morrisonhotelgallery.com/images/big/WCHAMP16.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <img src="https://media.npr.org/assets/img/2017/11/02/wilburware_anightatthevillagevanguard_franciswolff_custom-a6c1ca1abc6bae6834dee17b7b7573a89a7bd9c0-s800-c85.jpg" style="max-width: 550px;" class="card-img-top" alt="album picture">
                     <label class="control-label">Bass</label>
                     <select asp-for="BassId" class="home-form-control" asp-items="Model.BassPlayers"></select>
                 </div>
@@ -31,7 +39,7 @@
                 @*--------------------------------------------------------------------------------*@
                 <div class="col">
 
-                    <img src="https://i.pinimg.com/originals/b6/b8/0b/b6b80b704420f01bc01cb5706a0ce46f.jpg" style="max-width: 500px;" class="card-img-top" alt="album picture">
+                    <img src="https://i.pinimg.com/originals/b6/b8/0b/b6b80b704420f01bc01cb5706a0ce46f.jpg" style="max-width: 550px;" class="card-img-top" alt="album picture">
                     <label class="control-label">Drums</label>
                     <select asp-for="DrumId" class="home-form-control" asp-items="Model.DrumPlayers"></select>
                 </div>
@@ -41,7 +49,7 @@
         </div>
         <div class="text-center">
             <div class="submit-form-group">
-                <input type="submit" value="Submit" class="btn btn-prim ary" />
+                <input type="submit" value="Submit" class="btn btn-light" />
             </div>
         </div>
 
@@ -138,10 +146,10 @@
                         </div>
                         <div class="text-center">
                             <a asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
-                                <input class="btn btn-success" type="submit" value="Details" />
+                                <input class="btn btn-outline-dark" type="submit" value="Details" />
                             </a>
                             <a asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
-                                <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
+                                <input class="btn btn-dark" type="submit" value="Add to Wishlist" />
                             </a>
                         </div>
                     </div>

@@ -12,9 +12,14 @@ a {
   color: #0366d6;
 }
 
+.body {
+    background-image: url(https://media.gettyimages.com/photos/thelonius-monk-playing-at-the-five-spot-jazz-club-at-2-st-marks-place-picture-id1003634638?s=2048x2048)
+}
+
 .jazzima-home {
     color: black;
     background-color: black;
+    margin-bottom: 15px;
 }
 
 .btn-primary {
@@ -26,7 +31,19 @@ a {
     flex-direction: row;
     /*color: forestgreen;
     background-color: forestgreen;*/
-    border-color: #1861ac;
+    border-color: black;
+}
+
+.btn.btn-primary {
+    color: #fff;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    /*color: forestgreen;
+    background-color: forestgreen;*/
+    border-color: black;
 }
 
 @@ -69,3 +73,28 @@ body {
@@ -62,6 +79,7 @@ a {
 .home-album-card {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 }
 
 .home-album-list {

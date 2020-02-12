@@ -540,7 +540,7 @@ namespace Jazzima1.Data
             Musician cannonballAdderley= new Musician()
             {
                 Id = 30,
-                Name = "Cannonball Adderley",
+                Name = "Nat Adderley",
                 Instrument = "alto saxophone",
                 InstrumentTypeId = 1,
             };

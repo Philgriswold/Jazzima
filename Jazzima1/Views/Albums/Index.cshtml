@@ -5,7 +5,7 @@
 }
 
 <div class="text-center"
-<form asp-action="Index" asp-controller="SavedAlbums" asp-route-buttonValue=null>
+<form asp-action="Index" asp-controller="Albums" method="get">
     <label>Search by Musician: </label>
     <input name="searchQuery" type="text" />
     <input class="btn btn-success" type="submit" value="Search" />
@@ -54,10 +54,10 @@
                         <img src="@item.Album.Image" style="max-width: 150px;" class="card-img-top" alt="album picture">
                         <div class="text-center">
                         <a asp-action="Details" asp-route-id="@item.AlbumId" asp-controller="Albums">
-                            <input class="btn btn-success" type="submit" value="Details" />
+                            <input class="btn btn-dark" type="submit" value="Details" />
                         </a>
                         <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
-                            <input class="btn btn-warning" type="submit" value="Delete" />
+                            <input class="btn btn-outline-dark" type="submit" value="Delete" />
                         </a>
                         </div>
                     </div>

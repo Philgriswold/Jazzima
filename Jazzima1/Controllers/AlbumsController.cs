@@ -21,9 +21,20 @@ namespace Jazzima1.Controllers
             _userManager = userManager;
         }
         // GET: Albums
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<IActionResult> Index([FromQuery]string searchQuery)
         {
             var user = await GetCurrentUserAsync();
+            ViewData["CurrentFilter"] = searchQuery;
+            if (!String.IsNullOrEmpty(searchQuery))
+            {
+                //var searchedAlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
+                //   .Include(c => c.Album)
+                //   .ThenInclude(album => album.MusicianAlbums)
+                //   .ThenInclude(musicianAlbum => musicianAlbum.Musician.Where(m => m.Name.Contains(searchQuery)))
+
+                //   .ToListAsync());
+            }
             var AlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
                 .Include(c => c.Album);
             //.FirstOrDefaultAsync(m => m.Id == id);
