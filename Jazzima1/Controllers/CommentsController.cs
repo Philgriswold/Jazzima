@@ -125,11 +125,12 @@ namespace Jazzima1.Controllers
             {
                 return NotFound();
             }
-
+            var user = await GetCurrentUserAsync();
             if (ModelState.IsValid)
             {
                 try
                 {
+                    comments.ApplicationUserId = user.Id;
                     _context.Update(comments);
                     await _context.SaveChangesAsync();
                 }
@@ -144,7 +145,7 @@ namespace Jazzima1.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Details", "Albums", new { id = id });
+                return RedirectToAction("Details", "Albums", new { id = comments.AlbumId });
             }
             ViewData["ApplicationUserId"] = new SelectList(_context.ApplicationUser, "Id", "Id", comments.ApplicationUserId);
             ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id", comments.AlbumId);

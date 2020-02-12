@@ -22,18 +22,19 @@ namespace Jazzima1.Controllers
         }
         // GET: Albums
         [HttpGet]
-        public async Task<IActionResult> Index([FromQuery]string searchQuery)
+        public async Task<IActionResult> Index(string searchQuery)
         {
             var user = await GetCurrentUserAsync();
             ViewData["CurrentFilter"] = searchQuery;
             if (!String.IsNullOrEmpty(searchQuery))
             {
-                //var searchedAlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
-                //   .Include(c => c.Album)
-                //   .ThenInclude(album => album.MusicianAlbums)
-                //   .ThenInclude(musicianAlbum => musicianAlbum.Musician.Where(m => m.Name.Contains(searchQuery)))
-
-                //   .ToListAsync());
+                var searchedAlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
+                   .Include(c => c.Album)
+                   .ThenInclude(album => album.MusicianAlbums)
+                   .ThenInclude(musicianAlbum => musicianAlbum.Musician)
+                   .AsQueryable();
+                await searchedAlbumDb.Where(a => a.Album.MusicianAlbums.Any(m => m.Musician.Name.Contains(searchQuery))).ToListAsync();
+                return View(searchedAlbumDb);
             }
             var AlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
                 .Include(c => c.Album);

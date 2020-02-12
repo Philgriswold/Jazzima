@@ -115,11 +115,11 @@ namespace Jazzima1.Controllers
         }
 
         // GET: SavedAlbums/Create
-        public IActionResult Create()
-        {
-            ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id");
-            return View();
-        }
+        //public IActionResult Create()
+        //{
+        //    ViewData["AlbumId"] = new SelectList(_context.Album, "Id", "Id");
+        //    return View();
+        //}
 
         // POST: SavedAlbums/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
