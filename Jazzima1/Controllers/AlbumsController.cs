@@ -33,8 +33,8 @@ namespace Jazzima1.Controllers
                    .ThenInclude(album => album.MusicianAlbums)
                    .ThenInclude(musicianAlbum => musicianAlbum.Musician)
                    .AsQueryable();
-                await searchedAlbumDb.Where(a => a.Album.MusicianAlbums.Any(m => m.Musician.Name.Contains(searchQuery))).ToListAsync();
-                return View(searchedAlbumDb);
+                var resultsAlbumDb = await searchedAlbumDb.Where(a => a.Album.MusicianAlbums.Any(m => m.Musician.Name.Contains(searchQuery))).ToListAsync();
+                return View(resultsAlbumDb);
             }
             var AlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
                 .Include(c => c.Album);
