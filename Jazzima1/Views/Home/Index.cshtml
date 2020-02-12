@@ -76,6 +76,36 @@
         <input type="submit" value="Submit" class="btn btn-prim ary" />
     </div>
 </form>
+@*<div class="home-album-list">
+
+
+        @if (Model.MatchingAlbums != null)
+        {
+            @foreach (var album in Model.MatchingAlbums)
+            {
+                <div class="card text-center" style="width: 12rem;">
+                    <div class="home-album-card">
+                        <h5 class="card-title">
+                            <div class="card-body">
+                                <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
+                        </h5>
+                        <p class="card-text">
+
+                            <form asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
+                                <input class="btn btn-success" type="submit" value="Details" />
+                            </form>
+                            <form asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
+                                <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+    </div>*@
+
 <div class="home-album-list">
 
 
@@ -83,32 +113,28 @@
     {
         @foreach (var album in Model.MatchingAlbums)
         {
-            <div class="card text-center" style="width: 12rem;">
-                <div class="home-album-card">
-                    <h5 class="card-title">
-                        <div class="card-body">
-                            <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
-                    </h5>
-                    <p class="card-text">
-
-                        <form asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
+            <div class="card-group">
+                <div class="card">
+                    <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
+                    <div class="text-center">
+                        <a asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
                             <input class="btn btn-success" type="submit" value="Details" />
-                        </form>
-                        <form asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
+                        </a>
+                        <a asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
                             <input class="btn btn-warning" type="submit" value="Add to Wishlist" />
-                        </form>
-                    </p>
-                </div>
-                </div>
-                }
-                }
+                        </a>
+                    </div>
+               </div>
+          </div>
+        }
+    }
 
-            </div>
-        </div>
+</div>
 
 
-    
-       
-     
-    
+
+
+
+
+
 
