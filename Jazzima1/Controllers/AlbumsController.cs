@@ -29,7 +29,7 @@ namespace Jazzima1.Controllers
             if (!String.IsNullOrEmpty(searchQuery))
             {
                 var searchedAlbumDb = _context.SavedAlbums.Where(a => a.UserId == user.Id)
-                   .Include(c => c.Album)
+                   .Include(c => c.Album) 
                    .ThenInclude(album => album.MusicianAlbums)
                    .ThenInclude(musicianAlbum => musicianAlbum.Musician)
                    .AsQueryable();

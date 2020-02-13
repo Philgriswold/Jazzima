@@ -60,17 +60,19 @@
             {
                 <div class="card-group">
                     <div class="card">
-                        <img src="@item.Album.Image" style="max-width: 150px;" class="card-img-top" alt="album picture">
-                        <div class="text-center">
-                        <a asp-action="Details" asp-route-id="@item.AlbumId" asp-controller="Albums">
-                            <input class="btn btn-dark" type="submit" value="Details" />
-                        </a>
-                        <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
-                            <input class="btn btn-outline-dark" type="submit" value="Delete" />
-                        </a>
+                        <div class="row-cols-5">
+                            <img src="@item.Album.Image" style="max-width: 150px;" class="card-img-top" alt="album picture">
+                            <div class="text-center">
+                                <a asp-action="Details" asp-route-id="@item.AlbumId" asp-controller="Albums">
+                                    <input class="btn btn-dark" type="submit" value="Details" />
+                                </a>
+                                <a asp-controller="SavedAlbums" asp-action="Delete" asp-route-id="@item.Id">
+                                    <input class="btn btn-outline-dark" type="submit" value="Delete" />
+                                </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 }
         </div>
 
