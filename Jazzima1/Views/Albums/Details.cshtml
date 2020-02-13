@@ -6,66 +6,126 @@
 }
 
 
-<h1>Details</h1>
-
 <div>
-    <h4>Album</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
-        <td>
-            <img class="img-thumbnail" style="max-width: 300px;" src="@Model.Image" alt="" />
-        </td>
-        @foreach (var item in Model.MusicianAlbums)
-        {
-            <dd class="col-sm-10">
-                <strong>
-                    @Html.DisplayFor(modelitem => item.Musician.Name)
-                </strong>
-            </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(modelitem => item.Musician.Instrument)
-            </dd>
-        }
-        <div>
-        <dt class="col-sm-2">
-            Comments:
-        </dt>
-        <div>
-            @if (Model.Comments.Count() > 0)
-            {
-            @foreach (var item in Model.Comments)
-            {
-                @if (item.ApplicationUser.FirstName != null)
-                {
-                    @item.ApplicationUser.FirstName
-                }
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
                 <dd class="col-sm-10">
-                    @Html.DisplayFor(modelItem => item.Content)
+                    @Html.DisplayFor(model => model.Title)
                 </dd>
-            }
-            }
+                @*<dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ReleaseDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.ReleaseDate)
+                </dd>*@
+            <td>
+                <img class="img-thumbnail" style="max-width: 300px;" src="@Model.Image" alt="" />
+                <div>
+                    <a asp-action="Create" asp-route-id="@Model.Id" asp-controller="Comments">
+                        <input class="btn btn-outline-dark" type="submit" value="Add a Comment" />
+                    </a>
+                    <div>
+                        <dt class="col-sm-2">
+                           <br />
+                        </dt>
+                        <div class="container">
+                            <div>
+                                @if (Model.Comments.Count() > 0)
+                                {
+                                    @foreach (var item in Model.Comments)
+                                    {
+                                        @if (item.ApplicationUser.FirstName != null)
+                                        {
+                                            <div class="col"><strong>
+                                                @item.ApplicationUser.FirstName
+                                                </strong>
+                                            </div>
+                                        }
+                                        <div class="col">
+                                            <dd class="col-sm-10">
+                                                @Html.DisplayFor(modelItem => item.Content)
+                                            </dd>
+                                        </div>
+                                        <div class="col">
+                                            <a asp-action="Edit" asp-route-id="@item.Id" asp-controller="Comments">
+                                                <input class="btn btn-dark" type="submit" value="Edit a Comment" />
+                                            </a>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </td>
+
+                </div>
+                    <div class="row">
+                        <div class="col-sm">
+                        <div class="card">
+                            <div class="card-body">
+                                @foreach (var item in Model.MusicianAlbums)
+                                {
+                                    <dd class="row">
+                                        <strong>
+                                            @Html.DisplayFor(modelitem => item.Musician.Name)
+                                        </strong>
+                                    </dd>
+                                    <dd class="row">
+                                        @Html.DisplayFor(modelitem => item.Musician.Instrument)
+                                    </dd>
+
+                                }
+                            </div>
+                        </div>
+                   </div>
+               </div>
+                   
+
+
+
+
+
+            @*THE OGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG*@
+
+            @*<div>
+                <dt class="col-sm-2">
+                    Comments:
+                </dt>
+                <div>
+                    @if (Model.Comments.Count() > 0)
+                    {
+                        @foreach (var item in Model.Comments)
+                        {
+                            @if (item.ApplicationUser.FirstName != null)
+                            {
+                                @item.ApplicationUser.FirstName
+                            }
+                            <a asp-action="Edit" asp-route-id="@item.Id" asp-controller="Comments">
+                                <input class="btn btn-success" type="submit" value="Edit a Comment" />
+                            </a>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(modelItem => item.Content)
+                            </dd>
+                        }
+                    }
+                </div>
+            </div>*@
+       
         </div>
-      </div>
-    </dl>
-</div>
 
 <div>
 
-        <h4>Comments</h4>
+        @*<h4>Comments</h4>*@
 
-        <dl class="row">
+        @*<dl class="row">
 
             @foreach (var item in Model.Comments)
 
@@ -88,16 +148,11 @@
 
             }
 
-            </d1>
+            </d1>*@
 
 </div>
 
-<div>
-    <a asp-action="Create" asp-route-id="@Model.Id" asp-controller="Comments">
-        <input class="btn btn-success" type="submit" value="Add a Comment" />
-    </a>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @*<div class="card mb-3" style="max-width: 840px;">
   <div class="row no-gutters">

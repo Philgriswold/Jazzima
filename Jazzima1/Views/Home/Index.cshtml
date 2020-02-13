@@ -7,7 +7,7 @@
 
 <div class="text-center">
 
-    <h1 class="display-4">Jazzima</h1>
+    <h1 class="display-4"><img src="~/images/jazzimablack.png" style="width: 200px; height: 80px;" /></h1>
 
 
 </div>
@@ -142,18 +142,20 @@
                 <div class="card-group">
                     <div class="card">
                         <div class="text-center">
-                            <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
+                            <div class="row row-cols-6">
+                                <img class="img-thumbnail" style="max-width: 150px;" src="@album.Image" alt="" />
+                            </div>
+                            <div class="text-center">
+                                <a asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
+                                    <input class="btn btn-outline-dark" type="submit" value="Details" />
+                                </a>
+                                <form asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
+                                    <input hidden asp-for="@album.Id" />
+                                    <input class="btn btn-dark" type="submit" value="Add to Wishlist" />
+                                </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <a asp-action="Details" asp-route-id="@album.Id" asp-controller="Home">
-                                <input class="btn btn-outline-dark" type="submit" value="Details" />
-                            </a>
-                            <form asp-action="Create" asp-route-id="@album.Id" asp-controller="SavedAlbums">
-                                <input hidden asp-for="@album.Id"/>
-                                <input class="btn btn-dark" type="submit" value="Add to Wishlist" />
-                            </form>
-                        </div>
-                    </div>
                 </div>
             }
         }
